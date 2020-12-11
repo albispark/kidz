@@ -13,70 +13,68 @@
     <title>KIDZ</title>
 </head>
 <body class="bg-light">
-<div class="container-fluid">
-    <div class="row align-items-center backg-blue py-1">
-        <div class="col text-left dropdown">
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#bdNavbar" aria-controls="bdNavbar" aria-expanded="true" aria-label="Toggle navigation">
-                <svg width="3em" height="3em" viewBox="0 0 16 16" class="bi bi-list" fill="white" xmlns="http://www.w3.org/2000/svg">
-                    <path fill-rule="evenodd" d="M2.5 11.5A.5.5 0 0 1 3 11h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 3 7h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 3 3h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
-                </svg>
-              </button>
-        </div>
-        <div class="col align-items-top">
-            <header class="text-white text-center">
-                <img src="img/bambino.jpg" alt="" width="100%">
-            </header>
-        </div>
-        <div class="col text-right">
-            <svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-cart-fill" fill="white" xmlns="http://www.w3.org/2000/svg">
-                <path fill-rule="evenodd" d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm7 0a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"/>
-            </svg>
-        </div>
-    </div>
-    
-    <div class="row">
-        <div class="col-12 pb-3 backg-blue">
-            <div>
-                <input class="search_bar form-control rounded-pill py-0 border-0" type="text" placeholder="Cerca" aria-label="Cerca"/>
-            </div>
-        </div>
-    </div>
+  <div class="container-fluid p-0">
+    <!-- Top bar -->
+      <div class="row align-items-center backg-blue py-1 m-0">
+        <!-- Navigation menu -->
+          <div class="col text-left dropdown">
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#bdNavbar" aria-controls="bdNavbar" aria-expanded="true" aria-label="Toggle navigation">
+                  <svg width="3em" height="3em" viewBox="0 0 16 16" class="bi bi-list" fill="white" xmlns="http://www.w3.org/2000/svg">
+                      <path fill-rule="evenodd" d="M2.5 11.5A.5.5 0 0 1 3 11h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 3 7h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 3 3h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
+                  </svg>
+                </button>
+          </div>
 
-    <div class="row">
-        <div id="myCarousel" class="carousel slide" data-ride="carousel">
-            <!-- Indicators -->
-            <ol class="carousel-indicators">
-              <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-              <li data-target="#myCarousel" data-slide-to="1"></li>
-              <li data-target="#myCarousel" data-slide-to="2"></li>
-            </ol>
-          
-            <!-- Wrapper for slides -->
-            <div class="carousel-inner">
-              <div class="item active">
-                <img src="img/bambino.jpg" alt="Chania">
-                <div class="carousel-caption">
-                  <h3>Los Angeles</h3>
-                  <p>LA is always so much fun!</p>
-                </div>
+          <!-- Logo -->
+          <div class="col align-items-top">
+              <header class="text-white text-center">
+                  <img src="img/albi_nero.jpg" alt="" width="100%">
+              </header>
+          </div>
+
+          <!-- Cart -->
+          <div class="col text-right">
+            <a href="#" alt="Cart">
+              <svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-cart-fill" fill="white" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm7 0a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"/>
+              </svg>
+            </a>
+          </div>
+      </div>
+      <!-- Search bar -->
+      <div class="row m-0">
+          <div class="col-12 pb-3 backg-blue">
+              <div>
+                  <input class="search_bar form-control rounded-pill py-0 border-0" type="text" placeholder="Cerca" aria-label="Cerca"/>
               </div>
-          
-              <div class="item">
-                <img src="img/ragazze.jpg" alt="Chicago">
-                <div class="carousel-caption">
-                  <h3>Chicago</h3>
-                  <p>Thank you, Chicago!</p>
-                </div>
-              </div>
-          
-              <div class="item">
-                <img src="img/bambino.jpg" alt="New York">
-                <div class="carousel-caption">
-                  <h3>New York</h3>
-                  <p>We love the Big Apple!</p>
-                </div>
-              </div>
+          </div>
+      </div>
+
+      <!-- Carousel-->
+      <div id="myCarousel" class="carousel slide" data-ride="carousel">
+          <!-- Indicators -->
+          <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+          </ol>
+
+          <!-- Carousel items -->
+        <div class="carousel-inner">
+          <div class="item active">
+            <img src="img/ragazze.jpg" width="100%" alt="TODO"/>
+            <div class="carousel-caption">
+                <h3>Chicago</h3>
+                <p>Thank you, Chicago!</p>
             </div>
+          </div>
+        
+          <div class="item">
+              <img src="img/bambino.jpg" width="100%" alt="TODO"/>
+              <div class="carousel-caption">
+                <h3>New York</h3>
+                <p>We love the Big Apple!</p>
+              </div>
+          </div>
           
             <!-- Left and right controls -->
             <a class="left carousel-control" href="#myCarousel" data-slide="prev">
@@ -87,9 +85,59 @@
               <span class="glyphicon glyphicon-chevron-right"></span>
               <span class="sr-only">Next</span>
             </a>
+        </div>
+      </div>
+
+      <!-- Products -->
+      
+      <!-- Title -->
+      <section>
+        <div class="row py-3 m-0 justify-content-center">
+          <header>
+            <h2>I più venduti</h2>
+          </header>
+        </div>
+
+        <!-- First row -->
+        <div class="row m-0 py-4">
+            <div class="col-6 p-0 m-0 text-center">
+              <img src="img/image7-3.jpg" width="100%" alt="tettine">
+              <h3>Tettine 1</h3>
+              <a href="#">Acquista ora</a>
+            </div>
+            <div class="col-6 p-0 m-0 text-center">
+              <img src="img/IMG_20200809_173735.jpg" width="100%" alt="tettine2">
+              <h3>Tettine 2</h3>
+              <a href="#">Acquista ora</a>
+            </div>
+        </div>
+
+        <!-- Second row -->
+        <div class="row m-0 py-4">
+          <div class="col-6 p-0 m-0 text-center">
+            <img src="img/SmartSelect_20200902-140728_Chrome.jpg" width="100%" alt="tettine">
+            <h3>Tettine 3</h3>
+            <a href="#">Acquista ora</a>
           </div>
-    </div>
-</div>
+          <div class="col-6 p-0 m-0 text-center">
+            <img src="img/Screenshot_20200516-2225512.jpg" width="100%" alt="tettine2">
+            <h3>Tettine 4</h3>
+            <a href="#">Acquista ora</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Footer -->
+      <div class="row justify-content-center backg-blue py-1 m-0">
+        <ul class="nav py-4">
+          <li><a href="#" class="text-white">Link 1</a></li>
+          <li><a href="#" class="text-white">Link 2</a></li>
+          <li><a href="#" class="text-white">Link 3</a></li>
+          <li><a href="#" class="text-white">Link 4</a></li>
+        </ul>
+      </div>
+
+  </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </body>
