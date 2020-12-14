@@ -1,7 +1,49 @@
+@font-face {
+    font-family: noto_sans;
+    src: url(../css/Noto_Sans/NotoSans-Regular.ttf);
+}
+
+@font-face {
+    font-family: noto_sans;
+    src: url(../css/Noto_Sans/NotoSans-Bold.ttf);
+    font-weight: bold;
+}
+
 .backg-blue {
     background-color: #2a49bf !important;
 }
 
 .search-bar {
     height: 30px;
+}
+
+.footer {
+    background-color: #f8f9fa;
+}
+
+.footer > div > hr {
+    border: 2px solid black;
+    margin: 0;
+}
+
+.footer-nav > li > a {
+    color: black;
+    opacity: 60%;
+    font-size: medium;
+}
+
+.legal-info {
+    padding: 0;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 12px;
+    line-height: 20px;
+    opacity: 90%;
+}
+
+.legal-info > p > a {
+    color: white;
+    margin: 0;
+    padding: 0;
+    border: 0;
 }
