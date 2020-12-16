@@ -32,16 +32,16 @@
 }
   
 .sidebar a {
-    /* padding: 8px 8px 8px 32px; */
+    padding-left: 10%;
     text-decoration: none;
-    font-size: 1.8em;
+    font-size: 1.6em;
     color: #818181;
     display: block;
     transition: 0.3s;
 }
   
 .sidebar .closebtn {
-    font-size: 3rem;
+    font-size: 1.8rem;
 }
 
 #main {
