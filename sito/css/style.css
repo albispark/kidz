@@ -17,6 +17,20 @@
     list-style-type: none;
 }
 
+.navbar-nav {
+    float:none;
+    margin:0 auto;
+    display: block;
+    text-align: center;
+}
+
+.navbar-nav > li {
+    padding-left: 1em;
+    padding-right: 1em;
+    display: inline-block;
+    float:none;
+}
+
 .sidebar {
     height: 100%;
     width: 0;
@@ -53,6 +67,11 @@
 
 .footer {
     background-color: #f8f9fa;
+}
+
+hr {
+    border-top: 1px solid black;
+    opacity: 20%;
 }
 
 .footer > div > hr {
