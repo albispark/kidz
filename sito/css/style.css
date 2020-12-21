@@ -70,6 +70,10 @@
     font-size: 1.8rem;
 }
 
+.fixed_position {
+    position: fixed;
+}
+
 #main {
     transition: margin-left .5s;
 }

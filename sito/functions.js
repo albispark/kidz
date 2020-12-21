@@ -1,18 +1,14 @@
-sideBarOpen=false;
-
 $(document).ready(function(){
 
   $('button.openbtn').click(function(e){
     document.getElementById("mySidebar").style.width = "275px";
     document.getElementById("main").style.marginLeft = "275px";
-    document.body.style.overflow = 'hidden';
-    sideBarOpen=true;
+    $('body').addClass("fixed_position");
   });
 
   $('a.closebtn').click(function(e){
     document.getElementById("mySidebar").style.width = "0";
     document.getElementById("main").style.marginLeft= "0";
-    document.body.style.overflow = 'none';
-    sideBarOpen=false;
+    $('body').removeClass("fixed_position");
   });
 });
