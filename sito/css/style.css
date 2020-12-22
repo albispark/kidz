@@ -28,8 +28,13 @@
 }
 
 .header_img_mobile {
-    width: 30%;
+    max-width: 100px;
     height: auto;
+}
+
+.notifications {
+    max-width: 300px;
+    white-space: normal;
 }
 
 .mynav_ul {
