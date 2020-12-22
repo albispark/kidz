@@ -8,13 +8,15 @@
     src: url(../css/Noto_Sans/NotoSans-Bold.ttf);
     font-weight: bold;
 }
-
+.row {
+    margin: 0;
+}
 .header-blue {
-    background-color: #4ba2c6 !important;
+    background-color: #6f3f7f !important;
 }
 
 .background-blue {
-    background-color: #81d3f9 !important;
+    background-color: #9f6baf !important;
 }
 
 .header_ul > li {
