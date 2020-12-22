@@ -22,6 +22,16 @@
     font-size: large;
 }
 
+.header_img_desktop {
+    width: auto;
+    height: 40px;
+}
+
+.header_img_mobile {
+    width: 30%;
+    height: auto;
+}
+
 .mynav_ul {
     list-style-type: none;
 }
