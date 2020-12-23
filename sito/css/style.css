@@ -39,10 +39,6 @@
     white-space: normal;
 }
 
-.mynav_ul {
-    list-style-type: none;
-}
-
 .navbar, .navbar-nav {
     float:none; 
     margin:0 auto;
@@ -76,8 +72,9 @@
     z-index: 1;
     top: 0;
     left: 0;
+    visibility: hidden;
     overflow-x: hidden;
-    transition: 0.5s;
+    transition: 0.4s;
     -moz-box-shadow:    3px 0 200px 0 #555;
     -webkit-box-shadow: 3px 0 200px 0 #555;
     box-shadow:         3px 0 200px 0 #555;
@@ -86,14 +83,10 @@
 .sidebar a {
     padding-left: 10%;
     text-decoration: none;
-    font-size: 1.6em;
+    font-size: 1.8em;
     color: #818181;
     display: block;
     transition: 0.3s;
-}
-  
-.sidebar .closebtn {
-    font-size: 1.8rem;
 }
 
 .fixed_position {
