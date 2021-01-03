@@ -140,3 +140,11 @@
     padding: 0;
     border: 0;
 }
+
+img {
+    width: 100%;
+}
+
+.img_width_90  img {
+    width: 90% !important;
+}
