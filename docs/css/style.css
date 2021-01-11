@@ -8,6 +8,12 @@
     src: url(../css/Noto_Sans/NotoSans-Bold.ttf);
     font-weight: bold;
 }
+
+html, body {
+    margin: 0;
+    height: 100%;
+}
+
 .row {
     margin: 0;
 }
@@ -36,7 +42,6 @@
 
 .notifications {
     max-width: 300px;
-    white-space: normal;
 }
 
 .navbar, .navbar-nav {
@@ -193,4 +198,14 @@ img {
 
 .img_width_90  img {
     width: 90% !important;
+}
+
+.to_be_read {
+    color: #343B3F;
+    font-weight: bolder;
+}
+
+.read {
+    color: #343B3F;
+    font-weight: lighter;
 }
