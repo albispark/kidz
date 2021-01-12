@@ -209,3 +209,7 @@ img {
     color: #343B3F;
     font-weight: lighter;
 }
+
+.add_product label{
+    font-weight: bolder;
+}
