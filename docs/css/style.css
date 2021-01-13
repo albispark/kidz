@@ -9,9 +9,11 @@
     font-weight: bold;
 }
 
-html, body {
-    margin: 0;
-    height: 100%;
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .row {
@@ -146,6 +148,10 @@ html, body {
 
 #main {
     transition: margin-left .5s;
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .search_bar_mobile {
