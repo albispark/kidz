@@ -1,9 +1,9 @@
 -- *********************************************
--- * Standard SQL generation                   
+-- * SQL MySQL generation                      
 -- *--------------------------------------------
 -- * DB-MAIN version: 11.0.1              
 -- * Generator date: Dec  4 2018              
--- * Generation date: Thu Jan 14 18:33:10 2021 
+-- * Generation date: Thu Jan 14 18:37:32 2021 
 -- * LUN file: C:\Users\Spark\Desktop\kidz\database\KIDZ.lun 
 -- * Schema: KIDZ/1 
 -- ********************************************* 
@@ -13,10 +13,7 @@
 -- ________________ 
 
 create database KIDZ;
-
-
--- DBSpace Section
--- _______________
+use KIDZ;
 
 
 -- Tables Section
@@ -32,16 +29,16 @@ create table CATEGORIA (
      nome char(30) not null,
      constraint IDCATEGORIA primary key (IDcategoria));
 
-create table in_carrello (
+create table incarrello (
      IDprodotto char(7) not null,
      IDuser char(7) not null,
-     quantita numeric(3) not null,
-     constraint IDIN CARRELLO primary key (IDprodotto, IDuser));
+     quantita int not null,
+     constraint IDINCARRELLO primary key (IDprodotto, IDuser));
 
-create table in_wishlist (
+create table inwishlist (
      IDprodotto char(7) not null,
      IDuser char(7) not null,
-     constraint IDIN WISHLIST primary key (IDuser, IDprodotto));
+     constraint IDINWISHLIST primary key (IDuser, IDprodotto));
 
 create table NOTIFICA (
      IDnotifica char(7) not null,
@@ -54,11 +51,11 @@ create table NOTIFICA (
 create table PRODOTTO (
      IDprodotto char(7) not null,
      titolo char(30) not null,
-     prezzo numeric(5,2) not null,
-     quantita_scorta numeric(5) not null,
-     descrizione char(500) not null,
+     prezzo decimal(5,2) not null,
+     quantita_scorta int not null,
+     descrizione varchar(500) not null,
      taglia char(10) not null,
-     eta numeric(3) not null,
+     eta int not null,
      constraint IDPRODOTTO_ID primary key (IDprodotto));
 
 create table ricezione (
@@ -71,7 +68,7 @@ create table riferimento (
      IDnotifica char(7) not null,
      constraint IDriferimento primary key (IDnotifica, IDprodotto));
 
-create table USER (
+create table UTENTE (
      IDuser char(7) not null,
      email char(30) not null,
      password char(30) not null,
@@ -87,51 +84,53 @@ create table USER (
 
 alter table appartenenza add constraint FKapp_PRO
      foreign key (IDprodotto)
-     references PRODOTTO;
+     references PRODOTTO (IDprodotto);
 
 alter table appartenenza add constraint FKapp_CAT
      foreign key (IDcategoria)
-     references CATEGORIA;
+     references CATEGORIA (IDcategoria);
 
-alter table in_carrello add constraint FKIN _USE
+alter table incarrello add constraint FKIN_USEC
      foreign key (IDuser)
-     references USER;
+     references UTENTE (IDuser);
 
-alter table in_carrello add constraint FKIN _PRO
+alter table incarrello add constraint FKIN_PROC
      foreign key (IDprodotto)
-     references PRODOTTO;
+     references PRODOTTO (IDprodotto);
 
-alter table in_wishlist add constraint FKIN _USE
+alter table inwishlist add constraint FKIN_USEW
      foreign key (IDuser)
-     references USER;
+     references UTENTE (IDuser);
 
-alter table in_wishlist add constraint FKIN _PRO
+alter table inwishlist add constraint FKIN_PROW
      foreign key (IDprodotto)
-     references PRODOTTO;
+     references PRODOTTO (IDprodotto);
 
-alter table NOTIFICA add constraint IDNOTIFICA_C_CHK
-     check(exists(select * from ricezione
-                  where ricezione.IDnotifica = IDnotifica)); 
+-- Not implemented
+-- alter table NOTIFICA add constraint IDNOTIFICA_C_CHK
+--     check(exists(select * from ricezione
+--                  where ricezione.IDnotifica = IDnotifica)); 
 
-alter table PRODOTTO add constraint IDPRODOTTO_CHK
-     check(exists(select * from appartenenza
-                  where appartenenza.IDprodotto = IDprodotto)); 
+-- Not implemented
+-- alter table PRODOTTO add constraint IDPRODOTTO_CHK
+--     check(exists(select * from appartenenza
+--                  where appartenenza.IDprodotto = IDprodotto)); 
 
 alter table ricezione add constraint FKric_USE
      foreign key (IDuser)
-     references USER;
+     references UTENTE (IDuser);
 
 alter table ricezione add constraint FKric_NOT
      foreign key (IDnotifica)
-     references NOTIFICA;
+     references NOTIFICA (IDnotifica);
 
 alter table riferimento add constraint FKrif_NOT
      foreign key (IDnotifica)
-     references NOTIFICA;
+     references NOTIFICA (IDnotifica);
 
 alter table riferimento add constraint FKrif_PRO
      foreign key (IDprodotto)
-     references PRODOTTO;
+     references PRODOTTO (IDprodotto);
 
 
 -- Index Section

@@ -3,16 +3,16 @@
 -- *--------------------------------------------
 -- * DB-MAIN version: 11.0.1              
 -- * Generator date: Dec  4 2018              
--- * Generation date: Thu Jan 14 18:33:10 2021 
+-- * Generation date: Thu Jan 14 18:30:18 2021 
 -- * LUN file: C:\Users\Spark\Desktop\kidz\database\KIDZ.lun 
--- * Schema: KIDZ/1 
+-- * Schema: Log_Rel_2/1 
 -- ********************************************* 
 
 
 -- Database Section
 -- ________________ 
 
-create database KIDZ;
+create database Log_Rel_2;
 
 
 -- DBSpace Section
@@ -32,13 +32,13 @@ create table CATEGORIA (
      nome char(30) not null,
      constraint IDCATEGORIA primary key (IDcategoria));
 
-create table in_carrello (
+create table in carrello (
      IDprodotto char(7) not null,
      IDuser char(7) not null,
      quantita numeric(3) not null,
      constraint IDIN CARRELLO primary key (IDprodotto, IDuser));
 
-create table in_wishlist (
+create table in wishlist (
      IDprodotto char(7) not null,
      IDuser char(7) not null,
      constraint IDIN WISHLIST primary key (IDuser, IDprodotto));
@@ -93,19 +93,19 @@ alter table appartenenza add constraint FKapp_CAT
      foreign key (IDcategoria)
      references CATEGORIA;
 
-alter table in_carrello add constraint FKIN _USE
+alter table in carrello add constraint FKIN _USE
      foreign key (IDuser)
      references USER;
 
-alter table in_carrello add constraint FKIN _PRO
+alter table in carrello add constraint FKIN _PRO
      foreign key (IDprodotto)
      references PRODOTTO;
 
-alter table in_wishlist add constraint FKIN _USE
+alter table in wishlist add constraint FKIN _USE
      foreign key (IDuser)
      references USER;
 
-alter table in_wishlist add constraint FKIN _PRO
+alter table in wishlist add constraint FKIN _PRO
      foreign key (IDprodotto)
      references PRODOTTO;
 
