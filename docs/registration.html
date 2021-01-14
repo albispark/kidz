@@ -108,7 +108,8 @@
     <div class="row">
         <div class="col-12 pt-2 pb-3">
             <div>
-              <input class="search_bar_mobile form-control rounded-pill py-0 border-0" type="search" placeholder="Cerca" aria-label="Cerca" />
+              <label class="label_search_bar" for="cerca">cerca</label>
+              <input class="search_bar_mobile form-control rounded-pill py-0 border-0" type="search" placeholder="Cerca" id="cerca" aria-label="Cerca" />
             </div>
         </div>
     </div>
@@ -225,9 +226,10 @@
     <!-- Search bar -->
     <div class="row background-blue">
       <div class="col-3"></div>
-        <div class="col-6 pb-2 pt-3">
+        <div class="col-6 pb-2 ">
             <div>
-              <input class="search_bar_desktop form-control rounded-pill py-0 border-0" type="search" placeholder="Cerca" aria-label="Cerca"/>
+              <label class="label_search_bar" for="cerca_d">cerca</label>
+              <input class="search_bar_desktop form-control rounded-pill py-0 border-0" type="search" id="cerca_d" placeholder="Cerca" aria-label="Cerca"/>
             </div>
         </div>
         <div class="col-3"></div>
@@ -267,23 +269,27 @@
       <div class=" col-10 col-md-6 border mb-4 mt-2 p-4">
         <form action="" class="was-validated">
           <div class="form-group">
-            <input type="text" class="form-control" placeholder="Nome" name="nome" required>
+            <label for="nome">nome</label>
+            <input type="text" class="form-control" placeholder="Nome" id="nome" name="nome" required>
             <div class="invalid-feedback">Necessario compilare il campo.</div>
           </div>
 
           <div class="form-group">
-            <input type="text" class="form-control" placeholder="Cognome" name="cognome" required>
+            <label for="cog">cognome</label>
+            <input type="text" class="form-control" placeholder="Cognome" name="cognome" id="cog" required>
             <div class="invalid-feedback">Necessario compilare il campo.</div>
           </div>
 
           <div class="form-group">
-            <input type="text" class="form-control" placeholder="Indirizzo email" name="email" required>
+            <label for="email">email</label>
+            <input type="text" class="form-control" placeholder="Indirizzo email" id="email" name="email" required>
             <div class="invalid-feedback">Necessario compilare il campo.</div>
           </div>
 
           <!-- tipo testo o password ??-->
           <div class="form-group">
-            <input type="text" class="form-control" placeholder="Password" name="password" required>
+            <label for="psw">password</label>
+            <input type="text" class="form-control" placeholder="Password" id="psw" name="password" required>
             <div class="invalid-feedback">Necessario compilare il campo.</div>
           </div>
           <button  type="submit" class="btn btn-primary btn-block mt-4">Crea account</button>

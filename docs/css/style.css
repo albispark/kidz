@@ -223,3 +223,18 @@ img {
 .add_product .checkbox label{
     font-weight: normal;
 }
+
+div .form-group label{
+    visibility: hidden;
+    margin: 0;
+}
+
+div .form-group {
+    margin: 0;
+}
+
+.label_search_bar{
+    margin:0;
+    padding: 0;
+    visibility: hidden;
+}
