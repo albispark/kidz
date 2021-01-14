@@ -219,3 +219,7 @@ img {
 .add_product label{
     font-weight: bolder;
 }
+
+.add_product .checkbox label{
+    font-weight: normal;
+}
