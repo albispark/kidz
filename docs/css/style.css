@@ -223,3 +223,22 @@ img {
 .add_product label{
     font-weight: bolder;
 }
+
+.check_categoria label{
+    font-weight: normal;
+}
+
+.registration .form-group label{
+    visibility: hidden;
+    margin: 0;
+}
+
+div .form-group {
+    margin: 0;
+}
+
+.label_search_bar{
+    margin:0;
+    padding: 0;
+    visibility: hidden;
+}

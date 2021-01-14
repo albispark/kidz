@@ -66,7 +66,7 @@
               <li class="d-flex justify-content-between p-0 m-0">
 
                 <div class="dropdown">
-                  <a class="btn btn-primary border-0 bg-transparent dropdown-toggle d-flex align-items-center px-2" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <a class="btn btn-primary border-0 bg-transparent dropdown-toggle d-flex align-items-center px-2" href="#" role="button" id="dropdownMenuk" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white" class="bi bi-envelope-fill" viewBox="0 0 16 16">
                       <path fill-rule="evenodd" d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414.05 3.555zM0 4.697v7.104l5.803-3.558L0 4.697zM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586l-1.239-.757zm3.436-.586L16 11.801V4.697l-5.803 3.546z"/>
                     </svg>
@@ -174,20 +174,6 @@
                 <input type="text" class="form-control" placeholder="" id="qt" name="qt" required>
                 <div class="invalid-feedback">Necessario compilare il campo.</div>
             </div>
-            <div class="form-group">
-                <label for="immagine">Immagine:</label>
-                <input type="file" id="immagine_inserita" name="immagine_inserita" required="">
-            </div>
-            <div class="form-group">
-                <label for="categoria">Categoria (premere ctrl per selezionarne più di una):</label>
-                <select multiple class="form-control" id="categoria">
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5</option>
-                </select>
-            </div>
             
             <div class="form-group">
                 <label for="taglia">Taglia:</label>
@@ -201,7 +187,30 @@
                 <div class="invalid-feedback">Necessario compilare il campo.</div>
             </div>
 
-            <button type="submit" class="btn btn-primary btn-block">Inserisci</button>
+            
+            <div class="form-check mb-2 p-0">
+              <label>Categoria:</label>
+              <div class="check_categoria">
+                <input  class="mr-2" id="1" type="checkbox" name="1"/>
+                <label for="1">Uno</label>
+              </div>
+              <div class="check_categoria">
+                <input  class="mr-2" id="2" type="checkbox" name="2" />
+                <label for="2">Due</label>
+              </div>
+            </div>
+
+            
+            <div class="form-group">
+              <label for="immagine">Immagine:</label>
+              <input type="file" id="immagine" name="immagine_inserita" required="">
+            </div>
+
+            <div class="dropdown-divider"></div>
+            <div class="row justify-content-center">
+              <button type="submit" class="btn btn-primary mr-3">Inserisci</button>
+              <button type="submit" class="btn btn-primary ">Annulla</button>
+            </div>
           </form>
         </div>
         <div class="col-1 col-md-3"></div>
