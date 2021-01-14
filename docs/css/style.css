@@ -216,6 +216,10 @@ img {
     font-weight: lighter;
 }
 
+.to_be_read > h3, .read > h3 {
+    font-size: 1.5em;
+}
+
 .add_product label{
     font-weight: bolder;
 }
