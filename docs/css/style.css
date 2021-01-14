@@ -220,11 +220,11 @@ img {
     font-weight: bolder;
 }
 
-.add_product .checkbox label{
+.check_categoria label{
     font-weight: normal;
 }
 
-div .form-group label{
+.registration .form-group label{
     visibility: hidden;
     margin: 0;
 }
