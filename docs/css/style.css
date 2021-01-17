@@ -27,6 +27,10 @@ body {
     background-color: #9f6baf !important;
 }
 
+.submenu_background_blue {
+    background-color: #aa7bb7 !important;
+}
+
 .header_ul > li {
     width: 33%;
     font-size: large;
