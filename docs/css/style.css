@@ -22,13 +22,14 @@ body {
     justify-content: space-between;
 }
 
-.cat_height > div {
+.category_box > div {
     display: flex;
     height: 150px;
+    width: 300px;
     justify-content: center;
     align-items: center;
-    border-radius: 10%;
-    font-size: 20px;
+    border-radius: 2%;
+    font-size: 50px;
     font-weight: bold;
 }
 
