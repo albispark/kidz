@@ -28,7 +28,6 @@ body {
     width: 300px;
     justify-content: center;
     align-items: center;
-    border-radius: 2%;
     font-size: 50px;
     font-weight: bold;
 }
@@ -266,4 +265,6 @@ div .form-group {
     visibility: hidden;
 }
 
-
+div > section > h2 {
+    font-size: 25px !important;
+}
