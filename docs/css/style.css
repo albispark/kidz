@@ -9,6 +9,13 @@
     font-weight: bold;
 }
 
+@media screen and (max-width: 576x){
+    .smaller_text {
+        font-size: 28px !important;
+        background-color: yellow !important;
+    }
+}
+
 body {
     display: flex;
     min-height: 100vh;
@@ -80,13 +87,15 @@ body {
 .product {
     position: relative;
     width: 100%;
-  }
+}
+
+
 
 .product_image {
     display: block;
     width: 100%;
     height: auto;
-  }
+}
 
 .overlay {
     position: absolute;
@@ -246,3 +255,5 @@ div .form-group {
     padding: 0;
     visibility: hidden;
 }
+
+
