@@ -9,10 +9,9 @@
     font-weight: bold;
 }
 
-@media screen and (max-width: 576x){
-    .smaller_text {
-        font-size: 28px !important;
-        background-color: yellow !important;
+@media screen and (max-width: 768px){
+    .smaller_text > h3 {
+        font-size: 20px !important;
     }
 }
 
@@ -21,6 +20,16 @@ body {
     min-height: 100vh;
     flex-direction: column;
     justify-content: space-between;
+}
+
+.cat_height > div {
+    display: flex;
+    height: 150px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10%;
+    font-size: 20px;
+    font-weight: bold;
 }
 
 .row {

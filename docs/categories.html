@@ -3,7 +3,7 @@
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -13,6 +13,7 @@
     <title>KIDZ</title>
 </head>
 <body>
+
 
   <div id="main" class="pageone container-fluid p-0">
 
@@ -30,7 +31,7 @@
                   <button type="button" id="focus_btn" class="btn-close border-0 bg-transparent" aria-label="Close">X</button>
                 </li>
                 <li class="p-2">
-                  <a href="inbox.html">
+                  <a href="index.html">
                     <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" class="bi bi-envelope" viewBox="0 0 16 16">
                       <path fill-rule="evenodd" d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2zm13 2.383l-4.758 2.855L15 11.114v-5.73zm-.034 6.878L9.271 8.82 8 9.583 6.728 8.82l-5.694 3.44A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.739zM1 11.114l4.758-2.876L1 5.383v5.73z"/>
                     </svg>
@@ -112,7 +113,6 @@
             </div>
         </div>
     </div>
-
   </div>
 
 
@@ -130,7 +130,7 @@
               <li class="d-flex justify-content-between p-0 m-0">
 
                 <div class="dropdown">
-                  <a class="btn btn-primary border-0 bg-transparent dropdown-toggle d-flex align-items-center px-2" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <a class="btn btn-primary border-0 bg-transparent dropdown-toggle d-flex align-items-center px-2" href="inbox.html" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white" class="bi bi-envelope-fill" viewBox="0 0 16 16">
                       <path fill-rule="evenodd" d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414.05 3.555zM0 4.697v7.104l5.803-3.558L0 4.697zM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586l-1.239-.757zm3.436-.586L16 11.801V4.697l-5.803 3.546z"/>
                     </svg>
@@ -193,6 +193,7 @@
             </a>
           </li>
 
+
           <li>
             <ul class="header_menu d-flex justify-content-end align-items-center p-0 m-0">
               <!-- Header accedi -->
@@ -238,6 +239,7 @@
     <div class="row p-0 background-blue">
       <nav class="navbar py-2">
         <ul class="navbar-nav nav_desktop">
+          <!-- Ci vanno gli onclick=" .js"-->
           <li class="nav-item">
             <a class="nav-item text-white font-weight-bold" href="search.html">MARCHE</a>
           </li>
@@ -259,96 +261,33 @@
 
   </div>
 
-  <!-- MAIN BODY -->
-
-  <!-- TODO bloccare per la versione destkop -->
-  <div class="row py-3 m-0 justify-content-center d-sm-block d-md-none">
-    <div class="2em">
-      <h2 class="text-center m-2">Totale ordine: ..,.. €</h2>
-      <a class="btn btn-primary my-2 btn-block" href="#" role="button">Procedi al pagamento</a>
-    </div>
-  </div>
-
-  <div class="row p-1 m-3 justify-content-center">
-    <header>
-      <h2>Carrello</h2>
-    </header>
-  </div>
-
-  <div class="row col-12 py-3 m-0 justify-content-center">
-    <div class="col-sm-1"></div>
-    <div class="row col-sm-10 col-md-12">
-      
-      <!-- Items -->
-      <div class="col-sm-12 col-md-8">
-        <div class="row border-bottom">
-          <div class="col-6 product p-0 m-0 text-center px-4 my-2">
-            <img src="img/boba.jpg" alt="TODO">
-            <div class="overlay">
-                <a class="product_label rounded font-weight-normal" href="TODO">Scopri di più</a>
-            </div>
-          </div>
-          <div class="col-6 p-0 m-0 px-4 smaller_text">
-            <h3 class="my-3 font-weight-bold">Bambola Disney Plus</h3>
-            <p class="d-none d-md-block">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-            <footer class="text-right">
-                <p>...,...€</p>
-                <a class="btn border-danger text-danger font-weight-normal my-2" href="#" role="button">Rimuovi</a>          
-            </footer>
-          </div>
-        </div>
-        <div class="row border-bottom">
-          <div class="col-6 product p-0 m-0 text-center px-4 my-2">
-            <img src="img/barbie.jpg" alt="TODO">
-            <div class="overlay">
-                <a class="product_label rounded font-weight-normal" href="TODO">Scopri di più</a>
-            </div>
-          </div>
-          <div class=" col-6 p-0 m-0 px-4 smaller_text">
-            <h3 class="my-3 font-weight-bold">Prodotto 2</h3>
-            <p class="d-none d-md-block">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-            <footer class="text-right">
-                <p>...,...€</p>
-                <a class="btn border-danger text-danger font-weight-normal my-2" href="#" role="button">Rimuovi</a>       
-            </footer>
-          </div>
-        </div>
-        <!-- NON HA IL BORDER BOTTON -->
-        <div class="row">
-          <div class="col-6 product p-0 m-0 text-center px-4 my-2">
-            <img src="img/minnie.jpg" alt="TODO">
-            <div class="overlay">
-                <a class="product_label rounded font-weight-normal" href="TODO">Scopri di più</a>
-            </div>
-          </div>
-          <div class=" col-6 p-0 m-0 px-4 smaller_text">
-            <h3 class="my-3 font-weight-bold">Prodotto 3</h3>
-            <p class="d-none d-md-block">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-            <footer class="text-right">
-                <p>...,...€</p>  
-                <a class="btn border-danger text-danger font-weight-normal my-2" href="#" role="button">Rimuovi</a>         
-            </footer>
-          </div>
-        </div>
+  <div class="row text-center text-white cat_height my-3">
+      <div class="col-1"></div>
+      <div class="col-4" style="background-color: #D9534F;">
+        <p>MARVEL</p>
       </div>
-
-      <!-- Summary -->
-      <div class="col-sm-12 my-5 col-md-4">
-        <h3 class="m-0 p-3 border">Dettagli d'ordine</h3>
-        <p class="m-0 p-3 border">Totale parziale: ...,...€</p>
-        <p class="m-0 p-3 border">Spedizione: ...,...€</p>
-        <p class="m-0 p-3 border">TOTALE: ...,...€</p>
-        <a class="btn btn-primary rounded-0 mb-2 btn-block" href="#" role="button">Procedi al pagamento</a>
+      <div class="col-2"></div>
+      <div class="col-4" style="background-color: #F0AD4E;">
+        <p>DISNEY</p>
       </div>
-
-    </div>
-    <div class="col-sm-1"></div>
+      <div class="col-1"></div>
   </div>
+  <div class="row text-center text-white cat_height my-3">
+    <div class="col-1"></div>
+    <div class="col-4" style="background-color: #F0AD4E;">
+      <p>MARVEL</p>
+    </div>
+    <div class="col-2"></div>
+    <div class="col-4" style="background-color: #D9534F;">
+      <p>DISNEY</p>
+    </div>
+    <div class="col-1"></div>
+    </div>
 
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="row col-12 px-0">
-      <hr class="hr_footer col-12 m-0 p-0"/>
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="row col-12 px-0">
+        <hr class="hr_footer col-12 m-0 p-0"/>
         <ul class="nav footer-nav py-3 px-3 col-12">
           <li class="col-md-3"></li>
           <li class="col-12 col-md-2 text-md-center p-0 m-0"><a href="#">ORDINI E SPEDIZIONI</a><hr class="mx-1 d-md-none d-block"/></li>
@@ -356,16 +295,16 @@
           <li class="col-12 col-md-2 text-md-center p-0 m-0"><a href="#">ACCOUNT</a></li>
           <li class="col-md-3"></li>
         </ul>
-    </div>
-    <div class="row bg-dark">
-      <div class="nav legal-info col-12 pt-4 pb-4 align-content-center">
-        <p class="m-0 col-12 text-center">
-          <a href="#">Termini e condizioni |</a> <a href="#">Politica dei cookie |</a> <a href="#">Informativa sulla privacy</a>
-        </p>
-        <p class="text-white m-0 col-12 text-center">© KIDZ tutti i diritti riservati.</p>
       </div>
-    </div>
-  </footer>
+      <div class="row bg-dark">
+        <div class="nav legal-info col-12 pt-4 pb-4 align-content-center">
+          <p class="m-0 col-12 text-center">
+            <a href="#">Termini e condizioni |</a> <a href="cookies.html">Politica dei cookie |</a> <a href="#">Informativa sulla privacy</a>
+          </p>
+          <p class="text-white m-0 col-12 text-center">© KIDZ tutti i diritti riservati.</p>
+        </div>
+      </div>
+    </footer>
 
   </div>
 
@@ -373,6 +312,5 @@
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-
 </body>
 </html>
