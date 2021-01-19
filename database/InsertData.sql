@@ -26,13 +26,13 @@ Articolo voluminoso che non usufruisce delle spese di spedizione gratuite: le sp
 
 ('02A0000', 'Registratore di cassa di Barbie', 35.00, 8, 'Il registratore di cassa di Barbie ha tanti accessori ed effetti sonori: giocare a fare shopping con le tue amiche non è mai stato così divertente!', 'U', 5, 'cassa.jpg'),
 
-('03A0000', 'Barbie Bambola con Capelli Lunghi Arcobaleno e Tanti Accessori', 28.00, 5, 'Crea stili spumeggianti e colorati per i capelli di questa bambola Barbie!
+('03A0000', 'Barbie Bambola', 28.00, 5, 'Crea stili spumeggianti e colorati per i capelli di questa bambola Barbie!
 I giovani stilisti adesso possono creare tantissimi look alla moda con la bambola Barbie Capelli Arcobaleno, dai capelli biondi, lunghi addirittura 19 cm!', 'U', 5, 'barbie.jpg'),
 
 
-('04A0000', 'COST ELSA CLASSIC B.NA IN BOX REF', 17.00, 5, 'costume di ottima qualità, curato nei dettagli, sarai la più bella, una vera e propria principessa.', 'U', 4, 'elsa.jpg'),
+('04A0000', 'Elsa classic', 17.00, 5, 'costume di ottima qualità, curato nei dettagli, sarai la più bella, una vera e propria principessa.', 'U', 4, 'elsa.jpg'),
 
-('05A0000', 'Cofanetto regalo costume Elsa e Anna Frozen 2™ bambina', 63.00, 4, ' Questo cofanetto regalo di Frozen 2 è composto da due costumi di Elsa e Anna per bambina in licenza ufficiale. Il costume di anna è composto da un vestito con cintura e mantello (scarpe e parrucca non incluse). 
+('05A0000', 'Costume Elsa e Anna', 63.00, 4, ' Questo cofanetto regalo di Frozen 2 è composto da due costumi di Elsa e Anna per bambina in licenza ufficiale. Il costume di anna è composto da un vestito con cintura e mantello (scarpe e parrucca non incluse). 
 
 Il costume di Elsa è composto da un vestito azzurro ed un mantello trasparente. Sarà un confanetto regalo di Frozen 2 perfetto per carnevale o per una festa di compleanno a tema Frozen!', 'U', 4, 'cofanetto.png');
 

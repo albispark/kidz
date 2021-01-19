@@ -49,12 +49,14 @@ create table NOTIFICA (
 
 create table PRODOTTO (
      IDprodotto char(7) not null,
-     titolo char(30) not null,
+     titolo char(25) not null,
      prezzo decimal(5,2) not null,
      quantita_scorta int not null,
      descrizione varchar(500) not null,
      taglia char(10) not null,
      eta int not null,
+     immagine char(25) not null,
+     sesso char(1) not null,
      constraint IDPRODOTTO_ID primary key (IDprodotto));
 
 create table ricezione (
