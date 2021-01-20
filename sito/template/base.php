@@ -91,7 +91,9 @@
           <div class="col-12 pb-3">
               <div>
                 <label class="label_search_bar" for="cerca">cerca</label>
-                <input class="search_bar_mobile form-control rounded-pill py-0 border-0" type="search" placeholder="Cerca" id="cerca" aria-label="Cerca" />
+                <form action="ricerca.php" method="GET"> 
+                   <input class="search_bar_mobile form-control rounded-pill py-0 border-0" type="search" placeholder="Cerca" id="cerca" aria-label="Cerca" name="cerca" />
+                </form>
               </div>
           </div>
       </div>
@@ -211,7 +213,9 @@
           <div class="col-6 pb-2">
               <div>
                 <label class="label_search_bar" for="cerca_d">cerca</label>
-                <input class="search_bar_desktop form-control rounded-pill py-0 border-0" type="search" id="cerca_d" placeholder="Cerca" aria-label="Cerca"/>
+                <form action="ricerca.php" method="GET">
+                  <input class="search_bar_desktop form-control rounded-pill py-0 border-0" type="search" id="cerca_d" placeholder="Cerca" aria-label="Cerca" name="cerca"/>
+                </form>
               </div>
           </div>
           <div class="col-3"></div>

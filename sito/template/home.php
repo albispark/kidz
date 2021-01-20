@@ -37,17 +37,17 @@
       <section class="mb-5 col-12 col-md-4 text-center">
         <img src="img/tipa_natale.png" alt="bimba" >
         <h3 class="font-weight-normal my-1">Bimba</h3>
-        <a class="text-primary text-uppercase font-weight-bolder" href="search.html">Vedi altro</a>
+        <a class="text-primary text-uppercase font-weight-bolder" href="ricerca.php?idsesso=F&nome=Bimba">Vedi altro</a>
       </section>
       <section class="mb-5 col-12 col-md-4 text-center">
         <img src="img/tipo_natale.png" alt="bimbo" >
         <h3 class="font-weight-normal my-1">Bimbo</h3>
-        <a class="text-primary text-uppercase font-weight-bolder" href="search.html">Vedi altro</a>
+        <a class="text-primary text-uppercase font-weight-bolder" href="ricerca.php?idsesso=M&nome=Bimbo">Vedi altro</a>
       </section>
       <section class="mb-5 col-12 col-md-4 text-center">
         <img src="img/novita.png" alt="bimbo e bimba" >
         <h3 class="font-weight-normal my-1">Novità</h3>
-        <a class="text-primary text-uppercase font-weight-bolder" href="search.html">Vedi altro</a>
+        <a class="text-primary text-uppercase font-weight-bolder" href="categorie.php?id=<?php echo $categoria["IDcategoria"];?>">Vedi altro</a>
       </section>
     </div>
 
@@ -86,7 +86,7 @@
       </div>
 
       <div class="row py-3 justify-content-center">
-        <a class="btn btn-primary" href="lista-prodotti.php" role="button">Scopri di più</a>
+        <a class="btn btn-primary" href="ricerca.php?idlista=1" role="button">Scopri di più</a>
       </div>
 
     </section>

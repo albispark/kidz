@@ -6,7 +6,7 @@
     <div class="col-md-3 p-0 m-0"></div>
     <div class="col-md-6 col-sm-12">
             <?php foreach($templateParams["sottocategorie"] as $sub): ?>
-                <a class="cat_a"  href="ricerca-categorie.php?id=<?php echo $sub["IDsottocategoria"];?>&nome=<?php echo $sub["nomesubc"]?>">
+                <a class="cat_a"  href="ricerca.php?idcat=<?php echo $sub["IDsottocategoria"];?>&nome=<?php echo $sub["nomesubc"]?>">
                     <div class="col-12 d-flex justify-content-center font-weight-bold m-0 p-4 border cat">
                         
                             <?php echo $sub["nomesubc"]?>
