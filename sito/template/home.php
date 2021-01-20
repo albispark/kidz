@@ -79,6 +79,7 @@
                     <h3 class="font-weight-normal"><?php echo $prod["titolo"]?></h3>
                     <a class="text-primary text-uppercase font-weight-bolder" href="product.html">Acquista ora</a>
                 </section>
+                <?php var_dump( UPLOAD_DIR.$prod["immagine"])?>
             <?php endforeach;?>
         </div>
 
