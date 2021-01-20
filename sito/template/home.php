@@ -74,12 +74,11 @@
         <div class="row col-md-10 py-4">
             <?php foreach($templateParams["prodotticasuali"] as $prod): ?>
             
-                <section class="col-6 col-md-3 p-0 m-0 text-center">
+                <section class="smaller_text col-6 col-md-3 p-0 m-0 text-center">
                     <img src="<?php echo UPLOAD_DIR.$prod["immagine"]?>"  alt="Prodotto <?php echo $prod["titolo"]?>">
                     <h3 class="font-weight-normal"><?php echo $prod["titolo"]?></h3>
-                    <a class="text-primary text-uppercase font-weight-bolder" href="product.html">Acquista ora</a>
+                    <a class="text-primary text-uppercase font-weight-bolder" href="prodotto.php?id=<?php echo $prod["IDprodotto"]; ?>">Acquista ora</a>
                 </section>
-                <?php var_dump( UPLOAD_DIR.$prod["immagine"])?>
             <?php endforeach;?>
         </div>
 
@@ -87,7 +86,7 @@
       </div>
 
       <div class="row py-3 justify-content-center">
-        <a class="btn btn-primary" href="search.html" role="button">Scopri di più</a>
+        <a class="btn btn-primary" href="lista-prodotti.php" role="button">Scopri di più</a>
       </div>
 
     </section>

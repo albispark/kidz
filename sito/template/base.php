@@ -28,14 +28,14 @@
                     <button type="button" id="focus_btn" class="btn-close border-0 bg-transparent" aria-label="Close">X</button>
                   </li>
                   <li class="p-2">
-                    <a href="inbox.html">
+                    <a href="inbox.php">
                       <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" class="bi bi-envelope" viewBox="0 0 16 16">
                         <path fill-rule="evenodd" d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2zm13 2.383l-4.758 2.855L15 11.114v-5.73zm-.034 6.878L9.271 8.82 8 9.583 6.728 8.82l-5.694 3.44A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.739zM1 11.114l4.758-2.876L1 5.383v5.73z"/>
                       </svg>
                     </a>
                   </li>
                   <li class="p-2">
-                    <a href="login.html">
+                    <a href="login.php">
                       <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"  fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
                         <path d="M13.468 12.37C12.758 11.226 11.195 10 8 10s-4.757 1.225-5.468 2.37A6.987 6.987 0 0 0 8 15a6.987 6.987 0 0 0 5.468-2.63z"/>
                         <path fill-rule="evenodd" d="M8 9a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
@@ -47,12 +47,12 @@
               </div>
             </li>
             <li>
-              <a href="wishlist.html">Wishlist</a>
+              <a href="wishlist.php">Wishlist</a>
             </li>
             <?php foreach($templateParams["categorie"] as $categoria): ?>
                 <li>
                     <hr/>
-                    <a href="wishlist.html"><?php echo $categoria["nome"]?></a>
+                    <a href="categorie.php?id=<?php echo $categoria["IDcategoria"];?>"><?php echo $categoria["nome"]?></a>
                 </li>
             <?php endforeach;?>
           </ul>
@@ -71,12 +71,12 @@
               </button>
             </li>
             <li class="nav-item text-center">
-              <a href="index.html">
+              <a href="index.php">
                 <img class="header_img_mobile" src="img/Logo_KIDZ_v2.png" alt="logo KIDZ"/>
               </a>
             </li>
             <li class="nav-item">
-              <a href="cart.html" title="Cart">
+              <a href="cart.php" title="Cart">
                 <svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-cart-fill" fill="white" xmlns="http://www.w3.org/2000/svg">
                     <path fill-rule="evenodd" d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm7 0a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"/>
                 </svg>
@@ -150,7 +150,7 @@
                           </a>
                         </li>
                         <li class="text-center mt-2 mb-1">
-                          <a href="inbox.html" class="text-primary font-weight-bold">VEDI TUTTI</a>
+                          <a href="inbox.php" class="text-primary font-weight-bold">VEDI TUTTI</a>
                         </li>
                       </ul>
                     </div>
@@ -171,7 +171,7 @@
 
             <!-- Header logo -->
             <li class="text-center">
-              <a href="index.html">
+              <a href="index.php">
                 <img class="header_img_desktop" src="img/Logo_KIDZ_v2.png" alt="logo"/>
               </a>
             </li>
@@ -180,7 +180,7 @@
               <ul class="header_menu d-flex justify-content-end align-items-center p-0 m-0">
                 <!-- Header accedi -->
                 <li class="d-flex align-items-center">
-                  <a class="btn btn-primary border-0 bg-transparent d-flex align-items-center px-2" href="login.html" role="button">
+                  <a class="btn btn-primary border-0 bg-transparent d-flex align-items-center px-2" href="login.php" role="button">
                     <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="white" class="bi bi-person-circle" viewBox="0 0 16 16">
                       <path d="M13.468 12.37C12.758 11.226 11.195 10 8 10s-4.757 1.225-5.468 2.37A6.987 6.987 0 0 0 8 15a6.987 6.987 0 0 0 5.468-2.63z"/>
                       <path fill-rule="evenodd" d="M8 9a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
@@ -191,7 +191,7 @@
                 </li>
                 <!-- Header carrello -->
                 <li class="d-flex align-items-center">
-                  <a class="btn btn-primary border-0 bg-transparent d-flex align-items-center px-2" href="cart.html" role="button">
+                  <a class="btn btn-primary border-0 bg-transparent d-flex align-items-center px-2" href="cart.php" role="button">
                     <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-cart-fill" fill="white" xmlns="http://www.w3.org/2000/svg">
                       <path fill-rule="evenodd" d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm7 0a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"/>
                   </svg>
@@ -223,9 +223,9 @@
           <ul class="navbar-nav nav_desktop">
           <?php foreach($templateParams["categorie"] as $categoria): ?>
                 <li class="nav-item">
-                  <a class="nav-item text-white font-weight-bold text-uppercase" href="search.html"><?php echo $categoria["nome"]?></a>
+                  <a class="nav-item text-white font-weight-bold text-uppercase" href="categorie.php?id=<?php echo $categoria["IDcategoria"];?>"><?php echo $categoria["nome"]?></a>
                 </li>
-            <?php endforeach;?>
+          <?php endforeach;?>
           </ul>
         </nav>
       </div>
@@ -233,7 +233,7 @@
     </div>
 
     <!-- MAIN BODY -->
-    <main>
+    <main class="mb-3">
       <?php
       if(isset($templateParams["nome"])){
           require($templateParams["nome"]);
