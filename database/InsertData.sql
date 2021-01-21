@@ -16,8 +16,8 @@ INSERT INTO `sottocategoria`(`IDsottocategoria`, `nome`, `IDcategoria`) VALUES
 ('00000H0','NATALE','000000C');
 
 INSERT INTO `utente`(`IDuser`, `email`, `password`, `nome`, `cognome`, `admin`) VALUES 
-('A000000', 'albispark@gmail.com', 'albi98', 'Albi', 'Spahiu', 'true'),
-('S000000', 'sofiaponi@gmail.com', 'sofia99', 'Sofia', 'Poni', 'true');
+('A000000', 'albispark@gmail.com', 'albi98', 'Albi', 'Spahiu', 1),
+('S000000', 'sofiaponi@gmail.com', 'sofia99', 'Sofia', 'Poni', 1);
 
 INSERT INTO `prodotto`(`IDprodotto`, `titolo`, `prezzo`, `quantita_scorta`, `descrizione`, `taglia`, `eta`, `immagine`, `sesso`) VALUES 
 ('01A0000', 'Bici bimbo 16” Avengers', 119.00, 8, 'BICI BIMBO MISURA 16” – AVENGERS – 2 FRENI – ruote in acciaio – gomme Gonfiabili – Ruota libera
