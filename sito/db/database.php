@@ -91,6 +91,16 @@
             $arr = array_merge($result, $result2);
             return array_unique($arr,SORT_REGULAR);
         }
+
+        
+        public function checkLogin($email, $password){
+            $stmt = $this->db->prepare("SELECT IDuser, email, nome FROM utente WHERE email = ? AND password = ? AND admin = 0");
+            $stmt->bind_param("ss", $email, $password);
+            $stmt->execute();
+            $result = $stmt->get_result();
+
+            return $result->fetch_all(MYSQLI_ASSOC);
+        }
     }
 
 ?>
