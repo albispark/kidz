@@ -91,6 +91,42 @@
             $arr = array_merge($result, $result2);
             return array_unique($arr,SORT_REGULAR);
         }
+
+        public function getWishlistProducts($iduser){
+            $stmt = $this->db->prepare("SELECT p.IDprodotto, p.titolo, p.prezzo, p.immagine 
+                                        FROM prodotto as p, in_wishlist as w
+                                        WHERE p.IDprodotto = w.IDprodotto AND w.IDuser = ?");
+            $stmt->bind_param("s", $iduser);
+            $stmt->execute();
+            $result = $stmt->get_result();
+        }
+        
+        public function checkLogin($email, $password){
+            $stmt = $this->db->prepare("SELECT IDuser, email, nome FROM utente WHERE email = ? AND password = ? AND admin = 0");
+            $stmt->bind_param("ss", $email, $password);
+            $stmt->execute();
+            $result = $stmt->get_result();
+
+            return $result->fetch_all(MYSQLI_ASSOC);
+        }
+
+            
+        public function getUserByEmail($email){
+            $query = "SELECT IDuser Password FROM utente WHERE email=?";
+            $stmt = $this->db->prepare($query);
+            $stmt->bind_param('s',$email);
+            $stmt->execute();
+            $result = $stmt->get_result();
+            return $result -> fetch_assoc();
+        }
+
+            
+        public function insertUser($codice, $nome, $cognome, $email, $password){
+            $admin = 0;
+            $stmt = $this->db->prepare("INSERT INTO utente(IDuser, email, password, nome, cognome, admin) VALUES (?, ?, ?, ?, ?, ?)");
+            $stmt->bind_param('sssssi', $codice ,$email, $password, $nome, $cognome, $admin);
+            return $stmt->execute();
+        }
     }
 
 ?>

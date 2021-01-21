@@ -36,11 +36,17 @@
                   </li>
                   <li class="p-2">
                     <a href="login.php">
+                      <?php if(isUserLoggedIn()):?>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" class="bi bi-person-lines-fill" viewBox="0 0 16 16">
+                        <path d="M6 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-5 6s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zM11 3.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4a.5.5 0 0 1-.5-.5zm.5 2.5a.5.5 0 0 0 0 1h4a.5.5 0 0 0 0-1h-4zm2 3a.5.5 0 0 0 0 1h2a.5.5 0 0 0 0-1h-2zm0 3a.5.5 0 0 0 0 1h2a.5.5 0 0 0 0-1h-2z"/>
+                      </svg>
+                      <?php else: ?>
                       <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"  fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
                         <path d="M13.468 12.37C12.758 11.226 11.195 10 8 10s-4.757 1.225-5.468 2.37A6.987 6.987 0 0 0 8 15a6.987 6.987 0 0 0 5.468-2.63z"/>
                         <path fill-rule="evenodd" d="M8 9a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
                         <path fill-rule="evenodd" d="M8 1a7 7 0 1 0 0 14A7 7 0 0 0 8 1zM0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8z"/>
-                      </svg>
+                      </svg> 
+                      <?php endif; ?>
                     </a>
                   </li>
                 </ul>
@@ -161,7 +167,7 @@
 
                 <!-- Header wishlist -->
                 <li class="d-flex pr-3">
-                  <a class="btn btn-primary border-0 bg-transparent d-flex align-items-center px-2" href="wishlist.html" role="button">
+                  <a class="btn btn-primary border-0 bg-transparent d-flex align-items-center px-2" href="wishlist.php?id=<?php echo $templateParams["iduser"]?>" role="button">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white" class="bi bi-suit-heart-fill" viewBox="0 0 16 16">
                       <path d="M4 1c2.21 0 4 1.755 4 3.92C8 2.755 9.79 1 12 1s4 1.755 4 3.92c0 3.263-3.234 4.414-7.608 9.608a.513.513 0 0 1-.784 0C3.234 9.334 0 8.183 0 4.92 0 2.755 1.79 1 4 1z"/>
                     </svg>
@@ -182,13 +188,17 @@
               <ul class="header_menu d-flex justify-content-end align-items-center p-0 m-0">
                 <!-- Header accedi -->
                 <li class="d-flex align-items-center">
-                  <a class="btn btn-primary border-0 bg-transparent d-flex align-items-center px-2" href="login.php" role="button">
+                  <a class="btn btn-primary border-0 bg-transparent d-flex align-items-center px-2"  <?php isActive("login.php");?> href="login.php" role="button">
                     <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="white" class="bi bi-person-circle" viewBox="0 0 16 16">
                       <path d="M13.468 12.37C12.758 11.226 11.195 10 8 10s-4.757 1.225-5.468 2.37A6.987 6.987 0 0 0 8 15a6.987 6.987 0 0 0 5.468-2.63z"/>
                       <path fill-rule="evenodd" d="M8 9a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
                       <path fill-rule="evenodd" d="M8 1a7 7 0 1 0 0 14A7 7 0 0 0 8 1zM0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8z"/>
                     </svg>
+                    <?php if(isUserLoggedIn()):?>
+                    &nbsp; <?php echo $_SESSION["nome"]; ?>
+                    <?php else: ?>
                     &nbsp; Accedi
+                    <?php endif; ?>
                   </a>
                 </li>
                 <!-- Header carrello -->
