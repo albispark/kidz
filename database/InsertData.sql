@@ -16,25 +16,25 @@ INSERT INTO `sottocategoria`(`IDsottocategoria`, `nome`, `IDcategoria`) VALUES
 ('00000H0','NATALE','000000C');
 
 INSERT INTO `utente`(`IDuser`, `email`, `password`, `nome`, `cognome`, `admin`) VALUES 
-('A000000', 'albispark@gmail.com', 'albi98', 'Albi', 'Spahiu', 'true'),
-('S000000', 'sofiaponi@gmail.com', 'sofia99', 'Sofia', 'Poni', 'true');
+('A000000', 'albispark@gmail.com', 'albi98', 'Albi', 'Spahiu', 1),
+('S000000', 'sofiaponi@gmail.com', 'sofia99', 'Sofia', 'Poni', 1);
 
-INSERT INTO `prodotto`(`IDprodotto`, `titolo`, `prezzo`, `quantita_scorta`, `descrizione`, `taglia`, `eta`, `immagine`) VALUES 
+INSERT INTO `prodotto`(`IDprodotto`, `titolo`, `prezzo`, `quantita_scorta`, `descrizione`, `taglia`, `eta`, `immagine`, `sesso`) VALUES 
 ('01A0000', 'Bici bimbo 16” Avengers', 119.00, 8, 'BICI BIMBO MISURA 16” – AVENGERS – 2 FRENI – ruote in acciaio – gomme Gonfiabili – Ruota libera
 
-Articolo voluminoso che non usufruisce delle spese di spedizione gratuite: le spese, ad eccezione che per la consegna al punto vendita, verranno addebitate', 'U', 5, 'bici.jpg'),
+Articolo voluminoso che non usufruisce delle spese di spedizione gratuite: le spese, ad eccezione che per la consegna al punto vendita, verranno addebitate', 'U', 5, 'bici.jpg', 'M'),
 
-('02A0000', 'Registratore di cassa di Barbie', 35.00, 8, 'Il registratore di cassa di Barbie ha tanti accessori ed effetti sonori: giocare a fare shopping con le tue amiche non è mai stato così divertente!', 'U', 5, 'cassa.jpg'),
+('02A0000', 'Cassa Barbie', 35.00, 8, 'Il registratore di cassa di Barbie ha tanti accessori ed effetti sonori: giocare a fare shopping con le tue amiche non è mai stato così divertente!', 'U', 5, 'cassa.jpg', 'F'),
 
 ('03A0000', 'Barbie Bambola', 28.00, 5, 'Crea stili spumeggianti e colorati per i capelli di questa bambola Barbie!
-I giovani stilisti adesso possono creare tantissimi look alla moda con la bambola Barbie Capelli Arcobaleno, dai capelli biondi, lunghi addirittura 19 cm!', 'U', 5, 'barbie.jpg'),
+I giovani stilisti adesso possono creare tantissimi look alla moda con la bambola Barbie Capelli Arcobaleno, dai capelli biondi, lunghi addirittura 19 cm!', 'U', 5, 'barbie.jpg', 'F'),
 
 
-('04A0000', 'Elsa classic', 17.00, 5, 'costume di ottima qualità, curato nei dettagli, sarai la più bella, una vera e propria principessa.', 'U', 4, 'elsa.jpg'),
+('04A0000', 'Elsa classic', 17.00, 5, 'costume di ottima qualità, curato nei dettagli, sarai la più bella, una vera e propria principessa.', 'U', 4, 'elsa.jpg', 'F'),
 
 ('05A0000', 'Costume Elsa e Anna', 63.00, 4, ' Questo cofanetto regalo di Frozen 2 è composto da due costumi di Elsa e Anna per bambina in licenza ufficiale. Il costume di anna è composto da un vestito con cintura e mantello (scarpe e parrucca non incluse). 
 
-Il costume di Elsa è composto da un vestito azzurro ed un mantello trasparente. Sarà un confanetto regalo di Frozen 2 perfetto per carnevale o per una festa di compleanno a tema Frozen!', 'U', 4, 'cofanetto.png');
+Il costume di Elsa è composto da un vestito azzurro ed un mantello trasparente. Sarà un confanetto regalo di Frozen 2 perfetto per carnevale o per una festa di compleanno a tema Frozen!', 'U', 4, 'cofanetto.png', 'F');
 
 INSERT INTO `appartenenza`(`IDprodotto`, `IDsottocategoria`) VALUES
 ('01A0000','00000D0'),

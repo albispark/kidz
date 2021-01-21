@@ -81,7 +81,7 @@ create table UTENTE (
      password char(30) not null,
      nome char(20) not null,
      cognome char(20) not null,
-     admin char not null,
+     admin tinyint(1) not null,
      constraint IDCLIENTE primary key (IDuser),
      constraint IDCLIENTE_1 unique (email));
 
