@@ -109,6 +109,24 @@
 
             return $result->fetch_all(MYSQLI_ASSOC);
         }
+
+            
+        public function getUserByEmail($email){
+            $query = "SELECT IDuser Password FROM utente WHERE email=?";
+            $stmt = $this->db->prepare($query);
+            $stmt->bind_param('s',$email);
+            $stmt->execute();
+            $result = $stmt->get_result();
+            return $result -> fetch_assoc();
+        }
+
+            
+        public function insertUser($codice, $nome, $cognome, $email, $password){
+            $admin = 0;
+            $stmt = $this->db->prepare("INSERT INTO utente(IDuser, email, password, nome, cognome, admin) VALUES (?, ?, ?, ?, ?, ?)");
+            $stmt->bind_param('sssssi', $codice ,$email, $password, $nome, $cognome, $admin);
+            return $stmt->execute();
+        }
     }
 
 ?>
