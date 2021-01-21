@@ -22,6 +22,13 @@
     .smaller_text > header > h2 {  
         font-size: 20px !important;
     }
+
+    .dati_personali {
+        background-color: #F8F9FA;
+        border: solid;
+        border-color: grey;
+        border-width: 1px;
+    }
 }
 
 body {
@@ -287,4 +294,8 @@ div .form-group {
 
 div > section > h2 {
     font-size: 25px !important;
+}
+
+.bigger_text {
+    font-size: 150%;
 }
