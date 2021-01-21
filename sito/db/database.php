@@ -99,7 +99,14 @@
             $stmt->bind_param("s", $iduser);
             $stmt->execute();
             $result = $stmt->get_result();
-    
+        }
+        
+        public function checkLogin($email, $password){
+            $stmt = $this->db->prepare("SELECT IDuser, email, nome FROM utente WHERE email = ? AND password = ? AND admin = 0");
+            $stmt->bind_param("ss", $email, $password);
+            $stmt->execute();
+            $result = $stmt->get_result();
+
             return $result->fetch_all(MYSQLI_ASSOC);
         }
     }
