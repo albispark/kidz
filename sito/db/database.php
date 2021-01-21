@@ -91,6 +91,17 @@
             $arr = array_merge($result, $result2);
             return array_unique($arr,SORT_REGULAR);
         }
+
+        public function getWishlistProducts($iduser){
+            $stmt = $this->db->prepare("SELECT p.IDprodotto, p.titolo, p.prezzo, p.immagine 
+                                        FROM prodotto as p, in_wishlist as w
+                                        WHERE p.IDprodotto = w.IDprodotto AND w.IDuser = ?");
+            $stmt->bind_param("s", $iduser);
+            $stmt->execute();
+            $result = $stmt->get_result();
+    
+            return $result->fetch_all(MYSQLI_ASSOC);
+        }
     }
 
 ?>
