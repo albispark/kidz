@@ -15,7 +15,9 @@
 
             
             <?php if(isset($templateParams["errorelogin"])): ?>
-            <p><?php echo $templateParams["errorelogin"];?></p>
+                <div class="alert alert-danger">
+                     <p><?php echo $templateParams["errorelogin"];?></p>
+                </div>
             <?php endif; ?>
 
             <button type="submit" class="btn btn-primary btn-block mt-2">Accedi</button>
