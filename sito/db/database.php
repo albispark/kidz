@@ -99,6 +99,14 @@
             $stmt->bind_param("s", $iduser);
             $stmt->execute();
             $result = $stmt->get_result();
+
+            return $result->fetch_all(MYSQLI_ASSOC);
+        }
+
+        public function insertInWishlist($prod, $iduser){
+            $stmt = $this->db->prepare("INSERT INTO in_wishlist(IDprodotto, IDuser) VALUES (?, ?)");
+            $stmt->bind_param("ss", $prod, $iduser);
+            return $stmt->execute();
         }
         
         public function checkLogin($email, $password){

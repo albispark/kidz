@@ -13,7 +13,10 @@
             <p><?php echo $templateParams["prodotto"]["descrizione"];?></p>
             <hr/>
             <a class="btn btn-primary mb-4 btn-block" href="#" role="button">Aggiungi al carrello</a>
-            <a class="btn btn-ligth text-primary border b-1 border-primary btn-block" href="#" role="button">Aggiungi alla wishlist</a>
+            <form action="insert.php?type=wishlist&idprod<?php echo $templateParams["prodotto"]["IDprodotto"]?>" method="POST">
+            <a class="btn btn-ligth text-primary border b-1 border-primary btn-block" href="#" role="button" type="submit">Aggiungi alla wishlist</a>
+            </form>
+           
         </div>
     </div>
   </section>
