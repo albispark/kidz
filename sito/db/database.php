@@ -103,10 +103,36 @@
             return $result->fetch_all(MYSQLI_ASSOC);
         }
 
-        public function insertInWishlist($prod, $iduser){
+        public function getCartProducts($iduser){
+            $stmt = $this->db->prepare("SELECT p.IDprodotto, p.titolo, p.prezzo, p.immagine, p.descrizione,  c.quantita 
+                                        FROM prodotto as p, in_carrello as c
+                                        WHERE p.IDprodotto = c.IDprodotto AND c.IDuser = ?");
+            $stmt->bind_param("s", $iduser);
+            $stmt->execute();
+            $result = $stmt->get_result();
+
+            return $result->fetch_all(MYSQLI_ASSOC);
+        }
+
+        public function insertInWishlist($idprod, $iduser){
             $stmt = $this->db->prepare("INSERT INTO in_wishlist(IDprodotto, IDuser) VALUES (?, ?)");
-            $stmt->bind_param("ss", $prod, $iduser);
+            $stmt->bind_param("ss", $idprod, $iduser);
             return $stmt->execute();
+        }
+
+        public function insertInCart($idprod, $iduser){
+            $stmt = $this->db->prepare("INSERT INTO in_carrello(IDprodotto, IDuser, quantita) VALUES (?, ?, 1)");
+            $stmt->bind_param("ss", $idprod, $iduser);
+            return $stmt->execute();
+        }
+
+        public function isInWishlist($iduser, $idprod) {
+            $stmt = $this->db->prepare("SELECT IDprodotto, IDuser FROM in_wishlist WHERE IDprodotto = ? AND IDuser = ?");
+            $stmt->bind_param("ss", $idprod, $iduser);
+            $stmt->execute();
+            $result = $stmt->get_result();
+
+            return $result->fetch_all(MYSQLI_ASSOC);
         }
         
         public function checkLogin($email, $password){
@@ -128,11 +154,22 @@
             return $result -> fetch_assoc();
         }
 
-            
         public function insertUser($codice, $nome, $cognome, $email, $password){
             $admin = 0;
             $stmt = $this->db->prepare("INSERT INTO utente(IDuser, email, password, nome, cognome, admin) VALUES (?, ?, ?, ?, ?, ?)");
             $stmt->bind_param('sssssi', $codice ,$email, $password, $nome, $cognome, $admin);
+            return $stmt->execute();
+        }
+
+        public function deleteFromWishlist($idprod, $iduser){
+            $stmt = $this->db->prepare("DELETE FROM in_wishlist WHERE IDprodotto = ? AND IDuser = ?");
+            $stmt->bind_param("ss", $idprod, $iduser);
+            return $stmt->execute();
+        }
+
+        public function deleteFromCart($idprod, $iduser){
+            $stmt = $this->db->prepare("DELETE FROM in_carrello WHERE IDprodotto = ? AND IDuser = ?");
+            $stmt->bind_param("ss", $idprod, $iduser);
             return $stmt->execute();
         }
     }
