@@ -316,3 +316,7 @@ div > section > h2 {
 .user_icon {
     max-width: 300px;
 }
+
+.insert > .form-group{
+    margin-top: 5px;
+}

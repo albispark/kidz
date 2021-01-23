@@ -10,9 +10,8 @@
             }
         }
 
-
-        public function getCategories(){
-            $stmt = $this->db->prepare("SELECT * FROM categoria");
+        public function getSubCategories(){
+            $stmt = $this->db->prepare("SELECT * FROM sottocategoria");
             $stmt->execute();
             $result = $stmt->get_result();
 
@@ -37,7 +36,7 @@
             return $result->fetch_all(MYSQLI_ASSOC);
         }
 
-        public function getSubCategories($id){
+        public function getProductSubCategories($id){
             $stmt = $this->db->prepare("SELECT subcat.IDsottocategoria, subcat.nome as nomesubc, cat.nome as nomec FROM sottocategoria as subcat, categoria as cat WHERE subcat.IDcategoria = ? AND cat.IDcategoria = subcat.IDcategoria");
             $stmt->bind_param("s", $id);
             $stmt->execute();
@@ -180,6 +179,31 @@
             $stmt = $this->db->prepare("DELETE FROM in_carrello WHERE IDprodotto = ? AND IDuser = ?");
             $stmt->bind_param("ss", $idprod, $iduser);
             return $stmt->execute();
+        }
+
+        public function getCategories(){
+            $stmt = $this->db->prepare("SELECT * FROM categoria");
+            $stmt->execute();
+            $result = $stmt->get_result();
+    
+            return $result->fetch_all(MYSQLI_ASSOC);
+        }
+
+        public function insertProduct($idprod, $titolo, $descrizione, $prezzo, $quantita, $taglia, $sesso, $eta, $imgarticolo){
+            $query = "INSERT INTO prodotto (IDprodotto, titolo, prezzo, quantita_scorta, descrizione, taglia, eta, immagine, sesso) VALUES (?, ?, ?, ?, ?, ?, ?, ? , ?)";
+            $stmt = $this->db->prepare($query);
+            $stmt->bind_param('ssdississ',$idprod, $titolo, $prezzo, $quantita,$descrizione, $taglia, $eta, $imgarticolo, $sesso);
+            $stmt->execute();
+            
+            return $stmt->insert_id;
+
+        }
+
+        public function insertCategoryOfProduct($idprod, $idcat){
+            $query = "INSERT INTO appartenenza (IDprodotto, IDsottocategoria) VALUES (?, ?)";
+        $stmt = $this->db->prepare($query);
+        $stmt->bind_param('ss',$idprod, $idcat);
+        return $stmt->execute();
         }
     }
 
