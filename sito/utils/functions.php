@@ -13,6 +13,19 @@ function isUserLoggedIn(){
     return !empty($_SESSION['IDuser']);
 }
 
+
+function isAdminLoggedIn(){
+    return !empty($_SESSION['IDadmin']);
+}
+
+
+function registerLoggedAdmin($user){
+    $_SESSION["IDadmin"] = $user["IDuser"];
+    $_SESSION["emailA"] = $user["email"];
+    $_SESSION["nomeA"] = $user["nome"];
+}
+
+
 function registerLoggedUser($user){
     $_SESSION["IDuser"] = $user["IDuser"];
     $_SESSION["email"] = $user["email"];

@@ -11,5 +11,9 @@
     setcookie(session_name(), '', time() - 42000, $params["path"], $params["domain"], $params["secure"], $params["httponly"]);
     // Cancella la sessione.
     session_destroy();
-    header('Location: ./');
+    if(isset($templateParams["typeSession"])){
+        header('Location: index-admin.php');
+    } else{
+        header('Location: ./');
+    }
 ?>

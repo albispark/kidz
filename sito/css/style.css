@@ -299,3 +299,7 @@ div > section > h2 {
 .bigger_text {
     font-size: 150%;
 }
+
+.dati_personali > ul {
+    list-style: none;
+}
