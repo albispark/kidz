@@ -14,11 +14,11 @@ if(isset($_POST["email"]) && isset($_POST["pwd"])){
 }
 
 if(isUserLoggedIn()){
-    $templateParams["titolo"] = "Blog TW - AreaUtente";
+    $templateParams["titolo"] = "KIDZ- AreaUtente";
     $templateParams["nome"] = "areautente.php";
 }
 else{
-    $templateParams["titolo"] = "Blog TW - Login";
+    $templateParams["titolo"] = "KIDZ - Login";
     $templateParams["nome"] = "login-form.php";
 }
 

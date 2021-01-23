@@ -303,3 +303,7 @@ div > section > h2 {
 .dati_personali > ul {
     list-style: none;
 }
+
+.insert > .form-group{
+    margin-top: 5px;
+}
