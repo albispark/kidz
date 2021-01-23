@@ -1,6 +1,6 @@
     <h2 class="text-center mt-4"> Accedi come admin</h2>
     <div class="row col-12 col-md-12 p-0 justify-content-center">
-        <div class="col-1 col-md-3"></div>
+        <div class="col-1 col-md-3 p-0"></div>
         <div class=" col-10 col-md-6 border my-4 p-4">
             <form action="login-admin.php" class="was-validated" method="POST">
             <div class="form-group">
@@ -25,5 +25,5 @@
             <div class="dropdown-divider"></div>
             </form>
         </div>
-        <div class="col-1 col-md-3"></div>
+        <div class="col-1 col-md-3 p-0"></div>
      </div>

@@ -1,5 +1,5 @@
     <div class="row col-12 col-md-12 p-0 justify-content-center">
-        <div class="col-1 col-md-3"></div>
+        <div class="col-1 col-md-3 p-0"></div>
         <div class=" col-10 col-md-6 border my-4 p-4">
             <form action="login.php" class="was-validated" method="POST">
             <div class="form-group">
@@ -25,5 +25,5 @@
             <a class="dropdown-item text-center" href="registration.php">Non hai un account? Iscriviti ora</a>
             </form>
         </div>
-        <div class="col-1 col-md-3"></div>
+        <div class="col-1 col-md-3 p-0"></div>
      </div>
