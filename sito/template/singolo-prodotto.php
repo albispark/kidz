@@ -12,10 +12,14 @@
             <p class="font-weight-bold">Dettagli prodotto</p>
             <p><?php echo $templateParams["prodotto"]["descrizione"];?></p>
             <hr/>
-            <a class="btn btn-primary mb-4 btn-block" href="#" role="button">Aggiungi al carrello</a>
-            <form action="insert.php?type=wishlist&idprod<?php echo $templateParams["prodotto"]["IDprodotto"]?>" method="POST">
-            <a class="btn btn-ligth text-primary border b-1 border-primary btn-block" href="#" role="button" type="submit">Aggiungi alla wishlist</a>
-            </form>
+            <a class="btn btn-primary mb-4 btn-block" <?php if(isUserLoggedIn()): ?>href="insertProd.php?type=cart&idprod=<?php echo $templateParams["prodotto"]["IDprodotto"];?>" <?php else: ?> href="login.php" <?php endif;?> role="button">Aggiungi al carrello</a>
+            <?php if(!empty($templateParams["check"])): ?>
+                <a class="btn border-danger text-danger font-weight-normal my-2 btn-block" href="removeProd.php?type=wishlist&where=singprod&idprod=<?php echo $templateParams["prodotto"]["IDprodotto"];?>" role="button">Rimuovi dalla wishlist</a>
+            <?php else: ?>
+                <form <?php if(isUserLoggedIn()): ?>action="insertProd.php?type=wishlist&idprod=<?php echo $templateParams["prodotto"]["IDprodotto"];?>" <?php else: ?> action="login.php" <?php endif;?>method="POST">
+                <button class="btn btn-ligth text-primary border b-1 border-primary btn-block" type="submit">Aggiungi alla wishlist</button>
+                </form>
+            <?php endif; ?>
            
         </div>
     </div>

@@ -21,9 +21,9 @@
             </div>
             <h2 class="font-weight-bold mb-2 mt-3"><?php echo $prod["titolo"];?></h2>
             <h3 class="font-weight-light my-2"><?php echo $prod["prezzo"];?> €</h3>
-            <a class="btn btn-primary font-weight-normal my-2" href="#" role="button">Aggiungi al carrello</a>
+            <a class="btn btn-primary font-weight-normal my-2" <?php if(isUserLoggedIn()): ?>href="insertProd.php?type=carrello&idprod=<?php echo $prod["IDprodotto"];?>" <?php else: ?> href="login.php" <?php endif;?> role="button">Aggiungi al carrello</a>
             <br/>
-            <a class="btn border-danger text-danger font-weight-normal my-2" href="#" role="button">Rimuovi</a>
+            <a class="btn border-danger text-danger font-weight-normal my-2" href="removeProd.php?type=wishlist&idprod=<?php echo $prod["IDprodotto"];?>" role="button">Rimuovi</a>
         </section>
     <?php endforeach;?>
     </div>
@@ -34,5 +34,5 @@
 
 <!-- Button "Continua lo shopping" -->
 <div class="row justify-content-center mt-5 mb-4">
-    <a class="btn btn-primary font-weight-normal text-center" href="#" role="button">Continua lo shopping</a>
+    <a class="btn btn-primary font-weight-normal text-center" href="lista-prodotti.php" role="button">Continua lo shopping</a>
 </div>
