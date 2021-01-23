@@ -1,7 +1,7 @@
 <?php
 require_once 'bootstrap-admin.php';
 
-$templateParams["typeSession"] = "admin";
+$_SESSION["typeSession"] = "admin";
 $templateParams["titoloA"] = "KIDZ- Home Admin";
 //Base Template
 if(isAdminLoggedIn()){

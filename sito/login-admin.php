@@ -13,6 +13,8 @@ if(isset($_POST["email"]) && isset($_POST["pwd"])){
     }
 }
 
+var_dump($_SESSION["typeSession"]);
+
 if(isAdminLoggedIn()){
     $templateParams["titoloA"] = "Blog TW - AreaUtente";
     $templateParams["nomeA"] = "areautente.php";
