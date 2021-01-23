@@ -30,9 +30,6 @@
                     </svg></a>
                 </li>
             </ul>
-            
-        
-           
         </div>
     </div>
     <div class="col-md-3"></div>

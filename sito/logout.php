@@ -12,7 +12,7 @@
     // Cancella la sessione.
     session_destroy();
     if(isset($templateParams["typeSession"])){
-        header('Location: index-admin.php');
+        header('Location: ./index-admin.php');
     } else{
         header('Location: ./');
     }
