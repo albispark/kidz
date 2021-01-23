@@ -28,6 +28,7 @@
         border: solid;
         border-color: grey;
         border-width: 1px;
+        max-width: 100% !important;
     }
 }
 
@@ -61,10 +62,14 @@ body {
     color: black;
 }
 
+.ricerca_a > h2 {
+    font-size: 150%;
+}
+
 
 .ricerca_a:hover{
-    text-decoration: none;
-    color: black;
+    text-decoration: underline;
+    color: #6f3f7f;
 }
 
 .row {
@@ -300,6 +305,14 @@ div > section > h2 {
     font-size: 150%;
 }
 
+.dati_personali {
+    max-width: 300px;
+}
+
 .dati_personali > ul {
     list-style: none;
+}
+
+.user_icon {
+    max-width: 300px;
 }

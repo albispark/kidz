@@ -3,6 +3,7 @@ require_once 'bootstrap-admin.php';
 
 $_SESSION["typeSession"] = "admin";
 $templateParams["titoloA"] = "KIDZ- Home Admin";
+$templateParams["lista"] = $dbh->getAllProduct();
 //Base Template
 if(isAdminLoggedIn()){
     $templateParams["nomeA"] = "home-admin.php";
