@@ -141,32 +141,17 @@
                     <!-- Messaggi - TODO -->
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                       <ul id="notifications_menu" class="list-unstyled">
-                        <li class="mb-1">
-                          <a class="dropdown-item" href="#">
-                            <div class="notifications">
-                              <h5 class="m-0">PRODOTTO DISPONIBILE</h5>
-                              <p class="text-truncate m-0">Il prodotto "LEGO Star Wars" è tornato disponibile.</p>
-                            </div>
-                          </a>
-                          <hr class="my-1"/>
-                        </li>
-                        <li class="mb-1">
-                          <a class="dropdown-item" href="#">
-                            <div class="notifications">
-                              <h5 class="m-0">ORDINE SPEDITO</h5>
-                              <p class="text-truncate m-0">L'ordine #456694 è stato spedito.</p>
-                            </div>
-                          </a>
-                          <hr class="my-1"/>
-                        </li>
-                        <li class="mb-1">
-                          <a class="dropdown-item" href="#">
-                            <div class="notifications">
-                              <h5 class="m-0">CODICE SCONTO</h5>
-                              <p class="text-truncate m-0">Hai ancora dei prodotti nel tuo carrello! Acquistali con questo codice per ottenere uno sconto del 10% --> SCONTO10</p>
-                            </div>
-                          </a>
-                        </li>
+                        <?php foreach($templateParams["notifiche"] as $notif):?>
+                          <li class="mb-1">
+                            <a class="dropdown-item" href="#">
+                              <div class="notifications">
+                                <h5 class="m-0"><?php $notif["titolo"]?></h5>
+                                <p class="text-truncate m-0"><?php $notif["messaggio"]?></p>
+                              </div>
+                            </a>
+                            <hr class="my-1"/>
+                          </li>
+                        <?php endforeach;?>
                         <li class="text-center mt-2 mb-1">
                           <a href="inbox.php" class="text-primary font-weight-bold">VEDI TUTTI</a>
                         </li>

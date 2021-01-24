@@ -46,3 +46,23 @@ INSERT INTO `appartenenza`(`IDprodotto`, `IDsottocategoria`) VALUES
 ('04A0000','00000G0'),
 ('05A0000','00000G0'),
 ('05A0000','00000H0');
+
+INSERT INTO `appartenenza`(`IDprodotto`, `IDsottocategoria`) VALUES
+('01A0000','00000D0'),
+('02A0000','00000B0'),
+('03A0000','00000B0'),
+('03A0000','00000E0'),
+('04A0000','00000F0'),
+('04A0000','00000G0'),
+('05A0000','00000G0'),
+('05A0000','00000H0');
+
+INSERT INTO `notifica`(`IDnotifica`, `titolo`, `messaggio`, `data`) VALUES
+('000N100','ORDINE SPEDITO', "L'ordine #456694 è stato spedito.", "2021-01-19"),
+('000N200','PRODOTTO DISPONIBILE', "L'articolo che volevi è tornato disponibile.", "2021-01-11"),
+('000N300','SALDI', "Approfitta degli sconti! Tantissimi prodotti a prezzi convenienti", "2020-12-24");
+
+INSERT INTO `ricezione`(`IDuser`, `IDnotifica`, `visualizzato`) VALUES
+('AN00000','000N300', 1),
+('AN00000','000N100', 1),
+('AN00000','000N200', 0);

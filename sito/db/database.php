@@ -201,9 +201,18 @@
 
         public function insertCategoryOfProduct($idprod, $idcat){
             $query = "INSERT INTO appartenenza (IDprodotto, IDsottocategoria) VALUES (?, ?)";
-        $stmt = $this->db->prepare($query);
-        $stmt->bind_param('ss',$idprod, $idcat);
-        return $stmt->execute();
+            $stmt = $this->db->prepare($query);
+            $stmt->bind_param('ss',$idprod, $idcat);
+            return $stmt->execute();
+        }
+
+        public function getMessages($iduser){
+            $stmt = $this->db->prepare("SELECT r.visualizzato, n.titolo, n.messaggio, n.data  FROM ricezione r, notifica n WHERE r.IDnotifica = n.IDnotifica AND r.IDuser = ?");
+            $stmt->bind_param("s", $iduser);
+            $stmt->execute();
+            $result = $stmt->get_result();
+
+            return $result->fetch_all(MYSQLI_ASSOC);
         }
     }
 

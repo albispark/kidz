@@ -62,6 +62,7 @@ create table PRODOTTO (
 create table ricezione (
      IDuser char(7) not null,
      IDnotifica char(7) not null,
+     visualizzato tinyint(1) not null,
      constraint IDricezione primary key (IDuser, IDnotifica));
 
 create table riferimento (
