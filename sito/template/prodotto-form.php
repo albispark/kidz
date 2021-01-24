@@ -50,8 +50,8 @@
               <label>Categoria:</label>
               <?php foreach($templateParams["categorie"] as $categoria): ?>
                 <div class="check_categoria">
-                        <input class="mr-2" type="checkbox" id="<?php echo $categoria["IDcategoria"]; ?>" name="categoria_<?php echo $categoria["IDcategoria"]; ?>"/>
-                        <label for="<?php echo $categoria["IDcategoria"]; ?>"><?php echo $categoria["nome"]; ?></label>
+                        <input class="mr-2" type="checkbox" id="<?php echo $categoria["IDsottocategoria"]; ?>" name="categoria_<?php echo $categoria["IDsottocategoria"]; ?>"/>
+                        <label for="<?php echo $categoria["IDsottocategoria"]; ?>"><?php echo $categoria["nome"]; ?></label>
                         
                 </div>
               <?php endforeach; ?>

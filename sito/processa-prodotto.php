@@ -14,11 +14,14 @@ require_once 'bootstrap-admin.php';
     $categorie = $dbh->getSubCategories();
     $categorie_inserite = array();
 
+   
     foreach($categorie as $categoria){
         if(isset($_POST["categoria_".$categoria["IDsottocategoria"]])){
-            array_push($categorie_inserite, $categoria["IDsottocategoria"]);
+            array_push($categorie_inserite, $categoria);
         }
     }
+
+    var_dump($categorie_inserite);
 
     //list($result, $msg) = uploadImage(UPLOAD_DIR, $_POST["immagine_ins"]);
     $result = 1;
