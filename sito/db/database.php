@@ -38,7 +38,8 @@
         }
 
         public function getProductById($id){
-            $stmt = $this->db->prepare("SELECT IDprodotto,titolo,prezzo,descrizione,immagine FROM prodotto WHERE IDprodotto = ?");
+            //$stmt = $this->db->prepare("SELECT IDprodotto,titolo,prezzo,descrizione,immagine FROM prodotto WHERE IDprodotto = ?");
+            $stmt = $this->db->prepare("SELECT * FROM prodotto WHERE IDprodotto = ?");
             $stmt->bind_param("s", $id);
             $stmt->execute();
             $result = $stmt->get_result();
@@ -47,7 +48,8 @@
         }
 
         public function getProductSubCategories($id){
-            $stmt = $this->db->prepare("SELECT subcat.IDsottocategoria, subcat.nome as nomesubc, cat.nome as nomec FROM sottocategoria as subcat, categoria as cat WHERE subcat.IDcategoria = ? AND cat.IDcategoria = subcat.IDcategoria");
+            //$stmt = $this->db->prepare("SELECT subcat.IDsottocategoria, subcat.nome as nomesubc, cat.nome as nomec FROM //sottocategoria as subcat, categoria as cat WHERE subcat.IDcategoria = ? AND cat.IDcategoria = subcat.IDcategoria");
+            $stmt = $this->db->prepare("SELECT IDsottocategoria FROM appartenenza WHERE IDprodotto = ?");
             $stmt->bind_param("s", $id);
             $stmt->execute();
             $result = $stmt->get_result();
@@ -214,6 +216,25 @@
         $stmt = $this->db->prepare($query);
         $stmt->bind_param('ss',$idprod, $idcat);
         return $stmt->execute();
+        }
+
+        public function deleteCategoriesOfProduct($idprod){
+            $stmt = $this->db->prepare("DELETE FROM appartenenza WHERE IDprodotto = ?");
+            $stmt->bind_param('s',$idprod);
+            return $stmt->execute();
+        }
+
+        public function updateProduct($idprod, $titolo, $descrizione, $prezzo, $quantita, $taglia, $sesso, $eta, $imgarticolo){
+            $stmt = $this->db->prepare("UPDATE prodotto SET IDprodotto = ?, titolo = ?, prezzo = ? , quantita_scorta = ?, descrizione = ?, taglia = ?, eta = ?, immagine = ?, sesso = ? WHERE IDprodotto = ?");
+            $stmt->bind_param('ssdississs',$idprod, $titolo, $prezzo, $quantita,$descrizione, $taglia, $eta, $imgarticolo, $sesso,$idprod);
+            return $stmt->execute();
+        }
+
+
+        public function deleteProduct($idprod){
+            $stmt = $this->db->prepare("DELETE FROM prodotto WHERE IDprodotto = ?");
+            $stmt->bind_param('s',$idprod);
+            return $stmt->execute();
         }
     }
 

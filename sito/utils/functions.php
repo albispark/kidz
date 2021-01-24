@@ -80,7 +80,7 @@ function uploadImage($path, $image){
         $msg .= "File caricato non è un'immagine! ";
     }
     //Controllo dimensione dell'immagine < 500KB
-    if ($image["size"] > $maxKB * 1024) {
+    if ($image["size"] > $maxKB * 2048) {
         $msg .= "File caricato pesa troppo! Dimensione massima è $maxKB KB. ";
     }
 

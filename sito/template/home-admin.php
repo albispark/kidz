@@ -23,16 +23,12 @@
                 <section class="col-md-3 col-6 border p-2 p-md-3">
                     <div class="product p-0 m-0 text-center px-1 my-2">
                         <img src="<?php echo UPLOAD_DIR.$prod["immagine"];?>" alt="<?php echo $prod["titolo"];?>">
-                        <div class="overlay">
-                            <a class="product_label rounded font-weight-normal" href="prodotto.php?id=<?php echo $prod["IDprodotto"];?>">Scopri di più</a>
-                        </div>
                     </div>
-                    <a class="smaller_text ricerca_a" href="prodotto.php?id=<?php echo $prod["IDprodotto"];?>">
                         <h2 class="font-weight-bold mb-2 mt-3"><?php echo $prod["titolo"];?></h2>
                         <h3 class="font-weight-light my-2"><?php echo $prod["prezzo"];?> €</h3>
                     </a>
-                    <a class="btn btn-secondary font-weight-normal my-2" href="TODO<?php echo $prod["IDprodotto"];?>" role="button">Modifica</a>
-                    <a class="btn border-danger text-danger font-weight-normal my-2" href="TODO<?php echo $prod["IDprodotto"];?>" role="button">Rimuovi</a>
+                    <a class="btn btn-secondary font-weight-normal my-2" href="gestisci-prodotto.php?id=<?php echo $prod["IDprodotto"];?>&action=2" role="button">Modifica</a>
+                    <a class="btn border-danger text-danger font-weight-normal my-2" href="gestisci-prodotto.php?id=<?php echo $prod["IDprodotto"];?>&action=3" role="button">Rimuovi</a>
                 </section>
             <?php endforeach;?>
         </div>
