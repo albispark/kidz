@@ -217,7 +217,7 @@
         }
 
         public function getMessages($iduser){
-            $stmt = $this->db->prepare("SELECT r.visualizzato, n.titolo, n.messaggio, n.data  FROM ricezione r, notifica n WHERE r.IDnotifica = n.IDnotifica AND r.IDuser = ?");
+            $stmt = $this->db->prepare("SELECT r.visualizzato, n.titolo, n.messaggio, n.data  FROM ricezione as r, notifica as n WHERE r.IDnotifica = n.IDnotifica AND r.IDuser = ?");
             $stmt->bind_param("s", $iduser);
             $stmt->execute();
             $result = $stmt->get_result();

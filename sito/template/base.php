@@ -1,3 +1,15 @@
+
+<?php 
+$iduser = -1;
+if(isUserLoggedIn()){
+    $iduser = $_SESSION["IDuser"];
+    $templateParams["notifiche"] = $dbh->getMessages($iduser);
+}
+else{
+    $templateParams["notifiche"] = [];
+}
+?>
+
 <!doctype html>
 <html lang="it">
 <head>
@@ -28,7 +40,11 @@
                     <button type="button" id="focus_btn" class="btn-close border-0 bg-transparent" aria-label="Close">X</button>
                   </li>
                   <li class="p-2">
-                    <a href="inbox.php">
+                     <?php if(isUserLoggedIn()):?>
+                        <a href="inbox.php">
+                      <?php else: ?>
+                        <a href="login.php">
+                      <?php endif; ?>
                       <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" class="bi bi-envelope" viewBox="0 0 16 16">
                         <path fill-rule="evenodd" d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2zm13 2.383l-4.758 2.855L15 11.114v-5.73zm-.034 6.878L9.271 8.82 8 9.583 6.728 8.82l-5.694 3.44A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.739zM1 11.114l4.758-2.876L1 5.383v5.73z"/>
                       </svg>
@@ -141,20 +157,26 @@
                     <!-- Messaggi - TODO -->
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                       <ul id="notifications_menu" class="list-unstyled">
+                      <?php if(isUserLoggedIn()):?>
                         <?php foreach($templateParams["notifiche"] as $notif):?>
                           <li class="mb-1">
                             <a class="dropdown-item" href="#">
                               <div class="notifications">
-                                <h5 class="m-0"><?php $notif["titolo"]?></h5>
-                                <p class="text-truncate m-0"><?php $notif["messaggio"]?></p>
+                                <h5 class="m-0"><?php echo $notif["titolo"]?></h5>
+                                <p class="text-truncate m-0"><?php echo $notif["messaggio"]?></p>
                               </div>
                             </a>
                             <hr class="my-1"/>
                           </li>
                         <?php endforeach;?>
-                        <li class="text-center mt-2 mb-1">
-                          <a href="inbox.php" class="text-primary font-weight-bold">VEDI TUTTI</a>
-                        </li>
+                          <li class="text-center mt-2 mb-1">
+                            <a href="inbox.php" class="text-primary font-weight-bold">VEDI TUTTI</a>
+                          </li>
+                        <?php else: ?>
+                          <li class="text-center mt-2 mb-1">
+                            <a href="login.php" class="text-primary font-weight-bold">LOGIN</a>
+                          </li>
+                        <?php endif; ?>
                       </ul>
                     </div>
                   </div>
