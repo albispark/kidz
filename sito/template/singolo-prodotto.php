@@ -12,7 +12,7 @@
             <p class="font-weight-bold">Dettagli prodotto</p>
             <p><?php echo $templateParams["prodotto"]["descrizione"];?></p>
             <hr/>
-            <a class="btn btn-primary mb-4 btn-block" <?php if(isUserLoggedIn()): ?>href="insertProd.php?type=cart&idprod=<?php echo $templateParams["prodotto"]["IDprodotto"];?>" <?php else: ?> href="login.php" <?php endif;?> role="button">Aggiungi al carrello</a>
+            <a class="btn btn-primary mb-4 btn-block" <?php if(isUserLoggedIn()): ?>href="insertProd.php?type=carrello&idprod=<?php echo $templateParams["prodotto"]["IDprodotto"];?>" <?php else: ?> href="login.php" <?php endif;?> role="button">Aggiungi al carrello</a>
             <?php if(!empty($templateParams["check"])): ?>
                 <a class="btn border-danger text-danger font-weight-normal my-2 btn-block" href="removeProd.php?type=wishlist&where=singprod&idprod=<?php echo $templateParams["prodotto"]["IDprodotto"];?>" role="button">Rimuovi dalla wishlist</a>
             <?php else: ?>

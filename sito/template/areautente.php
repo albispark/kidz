@@ -15,13 +15,13 @@
             <h3 class="text-bolder">I miei dati</h3>
             <ul class="p-0">
                 <li>
-                    <p>nome</p>
+                    <p>Nome:<?php echo " ".$_SESSION["nome"];?></p>
                 </li>
                 <li>
-                    <p>cognome</p>
+                    <p>Cognome:<?php echo " ".$_SESSION["cognome"];?></p>
                 </li>
                 <li>
-                    <p>email</p>
+                    <p>Email:<?php echo " ".$_SESSION["email"];?></p>
                 </li>
                 <li class="text-right">
                     <a href="logout.php" class="btn btn-secondary" role="button"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white" class="bi bi-box-arrow-right" viewBox="0 0 16 16">
