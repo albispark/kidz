@@ -18,6 +18,16 @@
             return $result->fetch_all(MYSQLI_ASSOC);
         }
 
+
+        public function getSubCategoriesById($id){
+            $stmt = $this->db->prepare("SELECT sc.nome as nomesubc, sc.IDsottocategoria, c.nome as nomec FROM sottocategoria as sc, categoria as c WHERE c.IDcategoria = sc.IDcategoria AND c.IDcategoria = ?");
+            $stmt->bind_param('s',$id);
+            $stmt->execute();
+            $result = $stmt->get_result();
+
+            return $result->fetch_all(MYSQLI_ASSOC);
+        }
+
         public function getRandomProduct($n){
             $stmt = $this->db->prepare("SELECT IDprodotto, titolo, immagine FROM prodotto ORDER BY RAND() LIMIT ?");
             $stmt->bind_param('i',$n);
