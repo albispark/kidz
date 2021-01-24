@@ -22,8 +22,9 @@ function isAdminLoggedIn(){
 
 function registerLoggedAdmin($user){
     $_SESSION["IDadmin"] = $user["IDuser"];
-    $_SESSION["emailA"] = $user["email"];
-    $_SESSION["nomeA"] = $user["nome"];
+    $_SESSION["email"] = $user["email"];
+    $_SESSION["nome"] = $user["nome"];
+    $_SESSION["cognome"] = $user["cognome"];
 }
 
 
@@ -31,6 +32,7 @@ function registerLoggedUser($user){
     $_SESSION["IDuser"] = $user["IDuser"];
     $_SESSION["email"] = $user["email"];
     $_SESSION["nome"] = $user["nome"];
+    $_SESSION["cognome"] = $user["cognome"];
 }
 
 function getEmptyArticle(){

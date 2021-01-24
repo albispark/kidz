@@ -14,7 +14,7 @@ if(isset($_POST["email"]) && isset($_POST["pwd"])){
 }
 
 if(isAdminLoggedIn()){
-    $templateParams["titoloA"] = "Blog TW - AreaUtente";
+    $templateParams["titoloA"] = "KIDZ - AreaUtente";
     $templateParams["nomeA"] = "areautente.php";
 }
 else{

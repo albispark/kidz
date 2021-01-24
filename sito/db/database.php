@@ -147,7 +147,7 @@
         }
         
         public function checkLogin($email, $password){
-            $stmt = $this->db->prepare("SELECT IDuser, email, nome FROM utente WHERE email = ? AND password = ? AND admin = 0");
+            $stmt = $this->db->prepare("SELECT IDuser, email, nome, cognome FROM utente WHERE email = ? AND password = ? AND admin = 0");
             $stmt->bind_param("ss", $email, $password);
             $stmt->execute();
             $result = $stmt->get_result();
@@ -156,7 +156,7 @@
         }
 
         public function checkLoginAdmin($email, $password){
-            $stmt = $this->db->prepare("SELECT IDuser, email, nome FROM utente WHERE email = ? AND password = ? AND admin = 1");
+            $stmt = $this->db->prepare("SELECT IDuser, email, nome, cognome FROM utente WHERE email = ? AND password = ? AND admin = 1");
             $stmt->bind_param("ss", $email, $password);
             $stmt->execute();
             $result = $stmt->get_result();

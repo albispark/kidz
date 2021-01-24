@@ -14,9 +14,10 @@
     setcookie(session_name(), '', time() - 42000, $params["path"], $params["domain"], $params["secure"], $params["httponly"]);
     // Cancella la sessione.
     session_destroy();
-    if(isset($type)){
+    var_dump($type);
+    if($type == "admin"){
         header('Location: ./index-admin.php');
     } else{
-        header('Location: ./');
+        header('Location: ./index.php');
     }
 ?>
