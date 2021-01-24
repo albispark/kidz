@@ -11,7 +11,7 @@ $idcategoria = -1;
 if(isset($_GET["id"])){
     $idcategoria = $_GET["id"];
 }
-$templateParams["sottocategorie"] = $dbh->getSubCategories($idcategoria);
+$templateParams["sottocategorie"] = $dbh->getSubCategoriesById($idcategoria);
 
 require 'template/base.php';
 ?>

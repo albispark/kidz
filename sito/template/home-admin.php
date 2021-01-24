@@ -12,6 +12,9 @@
     </div>
     <div class="col-md-1 col-0"></div>
 </div>
+<div class="row p-0 justify-content-center">
+    <a class="btn btn-primary btn-lg font-weight-normal my-2" href="gestisci-prodotto.php?action=1" role="button">Inserisci prodotto</a>
+</div>
 <div class="row mt-md-2 mt-sm-0 mx-0 text-center align-items-center">
     <div class="col-md-1 col-0"></div>
         <div class="row col-md-10 col-12">
@@ -28,7 +31,8 @@
                         <h2 class="font-weight-bold mb-2 mt-3"><?php echo $prod["titolo"];?></h2>
                         <h3 class="font-weight-light my-2"><?php echo $prod["prezzo"];?> €</h3>
                     </a>
-                    <a class="btn border-danger text-danger font-weight-normal my-2" href="TODO<?php echo $prod["IDprodotto"];?>" role="button">Modifica</a>
+                    <a class="btn btn-secondary font-weight-normal my-2" href="TODO<?php echo $prod["IDprodotto"];?>" role="button">Modifica</a>
+                    <a class="btn border-danger text-danger font-weight-normal my-2" href="TODO<?php echo $prod["IDprodotto"];?>" role="button">Rimuovi</a>
                 </section>
             <?php endforeach;?>
         </div>
