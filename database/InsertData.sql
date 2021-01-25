@@ -1,9 +1,8 @@
 INSERT INTO `categoria`(`IDcategoria`, `nome`) VALUES 
-('000000A', 'MARCHE'),
-('000000B', 'PERSONAGGI'),
-('000000C', 'COSTUMI'),
-('000000D', 'GIOCHI'),
-('000000E', 'NOVITA');
+('000000A', 'Marche'),
+('000000B', 'Personaggi'),
+('000000C', 'Costumi'),
+('000000D', 'Giochi');
 
 INSERT INTO `sottocategoria`(`IDsottocategoria`, `nome`, `IDcategoria`) VALUES 
 ('00000A0','LEGO','000000A'),
