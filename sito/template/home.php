@@ -46,8 +46,8 @@
       </section>
       <section class="mb-5 col-12 col-md-4 text-center">
         <img src="img/novita.png" alt="bimbo e bimba" >
-        <h3 class="font-weight-normal my-1">Novità</h3>
-        <a class="text-primary text-uppercase font-weight-bolder" href="categorie.php?id=<?php echo $categoria["IDcategoria"];?>">Vedi altro</a>
+        <h3 class="font-weight-normal my-1">Costumi</h3>
+        <a class="text-primary text-uppercase font-weight-bolder" href="categorie.php?id=000000C">Vedi altro</a>
       </section>
     </div>
 
