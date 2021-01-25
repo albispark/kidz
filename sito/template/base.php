@@ -3,6 +3,7 @@
 $iduser = -1;
 if(isUserLoggedIn()){
     $iduser = $_SESSION["IDuser"];
+    var_dump($iduser);
     $templateParams["notificheHeader"] = $dbh->getUnreadMessages($iduser);
 }
 else{
@@ -23,6 +24,7 @@ else{
     <link rel="stylesheet" href="css/style.css" >
     <script src="js/jquery-1.11.3.min.js"></script>
     <script src="js/functions.js"></script>
+    <script type="text/javascript" src="js/sha512.js"></script>
     <title><?php echo $templateParams["titolo"]?></title>
 </head>
 <body class="container-fluid p-0">

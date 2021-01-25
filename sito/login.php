@@ -4,7 +4,12 @@ require_once 'bootstrap.php';
 $_SESSION["typeSession"] = "user";
 if(isset($_POST["email"]) && isset($_POST["pwd"])){
     $templateParams["errorelogin"] = "";
-    $login_result = $dbh->checkLogin($_POST["email"], $_POST["pwd"]);
+    $user = $dbh->getUserByEmail($_POST["email"]);
+    var_dump($_POST["email"]);
+    if(!empty($user)){
+        $password = hash('sha512', $_POST["pwd"].$user["salt"]);
+    }
+    $login_result = $dbh->checkLogin($_POST["email"], $password);
     if(count($login_result)==0){
         $templateParams["errorelogin"] = "Errore! Username o password non corretti";
     }
@@ -24,8 +29,6 @@ else{
 }
 
 $templateParams["categorie"] = $dbh->getCategories();
-
-
 
 require 'template/base.php';
 ?>

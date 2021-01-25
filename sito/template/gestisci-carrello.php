@@ -29,8 +29,12 @@
             <h3 class="my-3 font-weight-bold"><?php echo $prod["titolo"]; ?></h3>
             <p class="d-none d-md-block"><?php echo $prod["descrizione"]; ?></p>
             <footer class="text-right">
-                <p><?php echo $prod["prezzo"]; ?>€</p>     
-                <a class="btn border-danger text-danger font-weight-normal my-2" href="removeProd.php?type=carrello&idprod=<?php echo $prod["IDprodotto"];?>" role="button">Rimuovi</a>
+              <p><?php echo $prod["prezzo"]; ?>€</p>
+
+              <!-- Quantity selector -->
+              <button class="btn btn-primary" id="meno" onclick=meno(<?php echo $templateParams["dettagliEvento"]["Prezzo"]?>)>-</button><span id="numeroBiglietti" class="mx-3">1</span><button class="btn btn-primary" id = "aggiungi" onclick=aggiungi(<?php echo $templateParams["dettagliEvento"]["Prezzo"]?>)>+</button>
+
+              <a class="btn border-danger text-danger font-weight-normal my-0 ml-2" href="removeProd.php?type=carrello&idprod=<?php echo $prod["IDprodotto"];?>" role="button">Rimuovi</a>
             </footer>
           </div>
         </div>
@@ -49,3 +53,28 @@
     </div>
     <div class="col-sm-1"></div>
   </div>
+            
+
+<script>
+
+function meno(p) {
+    let n = $("#numeroBiglietti").text();
+    if(parseInt(n)-1 >= 1){
+        n = parseInt(n)-1;
+        $("#numeroBiglietti").text(n);
+        $("#tot").text(n*p);
+
+    }
+
+}
+function aggiungi(p) {
+    let n = $("#numeroBiglietti").text();
+    if(parseInt(n)+1 <= 5){
+        n = parseInt(n)+1;
+        $("#numeroBiglietti").text(n);
+        $("#tot").text(n*p);
+
+    }
+
+}
+</script>
