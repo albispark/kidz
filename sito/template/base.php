@@ -173,7 +173,7 @@ else{
                       <?php if(isUserLoggedIn()):?>
                         <?php foreach($templateParams["notificheHeader"] as $notif):?>
                           <li class="mb-1">
-                            <a class="dropdown-item" href="#">
+                            <a class="dropdown-item" href="inbox.php">
                               <div class="notifications">
                                 <h5 class="m-0"><?php echo $notif["titolo"]?></h5>
                                 <p class="text-truncate m-0"><?php echo $notif["messaggio"]?></p>

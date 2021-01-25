@@ -18,5 +18,5 @@ else{
 
 $dbh->setMessagesRead($iduser);
 
-require 'template/base.php';
+require 'template/base-admin.php';
 ?>
