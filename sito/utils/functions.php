@@ -22,9 +22,9 @@ function isAdminLoggedIn(){
 
 function registerLoggedAdmin($user){
     $_SESSION["IDadmin"] = $user["IDuser"];
-    $_SESSION["email"] = $user["email"];
-    $_SESSION["nome"] = $user["nome"];
-    $_SESSION["cognome"] = $user["cognome"];
+    $_SESSION["emailA"] = $user["email"];
+    $_SESSION["nomeA"] = $user["nome"];
+    $_SESSION["cognomeA"] = $user["cognome"];
 }
 
 

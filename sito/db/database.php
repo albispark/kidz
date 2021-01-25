@@ -103,6 +103,26 @@
             return array_unique($arr,SORT_REGULAR);
         }
 
+        public function getEventsAdminBySearch($search){
+            $stmt=$this->db->prepare("SELECT IDprodotto, titolo, prezzo, immagine FROM prodotto WHERE titolo LIKE ? OR IDprodotto LIKE ?");
+            $cod = $search;
+            $search="%".$search."%";
+            $stmt->bind_param("ss",$search,$cod);
+            $stmt->execute();
+            $result=$stmt->get_result();
+            $result = $result->fetch_all(MYSQLI_ASSOC);
+            
+            $stmt2=$this->db->prepare("SELECT p.IDprodotto, p.titolo, p.prezzo, p.immagine FROM prodotto as p, appartenenza as ap, sottocategoria as sc WHERE sc.nome LIKE ? AND sc.IDsottocategoria = ap.IDsottocategoria AND ap.IDprodotto = p.IDprodotto");
+            $search="%".$search."%";
+            $stmt2->bind_param("s",$search);
+            $stmt2->execute();
+            $result2=$stmt2->get_result();
+            $result2 = $result2->fetch_all(MYSQLI_ASSOC);
+
+            $arr = array_merge($result, $result2);
+            return array_unique($arr,SORT_REGULAR);
+        }
+
         public function getWishlistProducts($iduser){
             $stmt = $this->db->prepare("SELECT p.IDprodotto, p.titolo, p.prezzo, p.immagine 
                                         FROM prodotto as p, in_wishlist as w

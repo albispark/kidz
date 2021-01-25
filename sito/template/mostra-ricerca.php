@@ -22,6 +22,7 @@
                         <h2 class="font-weight-bold mb-2 mt-3"><?php echo $prod["titolo"];?></h2>
                         <h3 class="font-weight-light my-2"><?php echo $prod["prezzo"];?> €</h3>
                     </a>
+                    <a class="btn btn-primary font-weight-normal my-2" <?php if(isUserLoggedIn()): ?>href="insertProd.php?type=carrello&idprod=<?php echo $prod["IDprodotto"];?>" <?php else: ?> href="login.php" <?php endif;?> role="button">Aggiungi al carrello</a>
                 </section>
             <?php endforeach;?>
         </div>
