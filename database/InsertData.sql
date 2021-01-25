@@ -15,10 +15,12 @@ INSERT INTO `sottocategoria`(`IDsottocategoria`, `nome`, `IDcategoria`) VALUES
 ('00000G0','FROZEN','000000B'),
 ('00000H0','NATALE','000000C');
 
-INSERT INTO `utente`(`IDuser`, `email`, `password`, `nome`, `cognome`, `admin`) VALUES 
-('A000000', 'albispark@gmail.com', 'albi98', 'Albi', 'Spahiu', 1),
-('S000000', 'sofiaponi@gmail.com', 'sofia99', 'Sofia', 'Poni', 1),
-('AN00000','angelopar@gmail.com','angelo','Angelo','Parrinello', 0);
+INSERT INTO `utente`(`IDuser`, `email`, `password`, `nome`, `cognome`, `admin`, `salt`) VALUES 
+('7025032', 'albertspayu@gmail.com', '8ab994691eb4fa8d3c952aa8bece4fde446890ccbaffdbe9e5cb32f0c0d240d1f1c989735efa1df2882caa56715f390cf64af46791d4b21a5dca0d9599aea592', 'Albi', 'Spahiu', 1,'673a6ec2902d6754fd753a186d76e37b540999ab689e61d19cc1ad0396f58acb5fccaf9990a70b89306e89f83bac694e87d40dc32bdc7cd1b87cd622bb260b2d'),
+('8965371', 'sofiaponi99@gmail.com', '3b271fa35b66a572c5943b6e20753a0633dadcf84d92c9670b2096e913885d6e1379f6c58bd53e7743a2481520f7530a28c5494f4a802a9cda2b6f4d6879c225', 'Sofia', 'Poni', 1), '20a3428df1188b5764833894f483646b23f89ddd5459728f37c6a8875301474b545f29bf2146edb3dc630a5fd648ba22404519b413fba78f712bd03474852892',
+('1515543','angelopar@gmail.com','dc7c80f874e84e409060d54fa0298de6899b6429db35ab1d9352cc46ac917591d20578129c3693e2e01481ef2121de5c69e84d5324fc732eaf034895a1f4417e','Angelo','Parrinello', 0, '1037742538cf30585fc8cced4f1724b470c7189477e5c1212a906aa2420af125166a624b4a5d1434a9ff87b46d7642171607282120be085e7fd6623f6643fd36'),
+('3079171','lucaponi@gmail.com','17312f507286d69aeff84e55aecfe9c475801bb23e59507dd19650ecc069064fdef4c15771fd84bfbec6d519c9cc3e7c4ebac15373659f31a0c46aa6a152393d','Angelo','Parrinello', 0, '583327a1f2ed2121a7223dc09130d341092782c0dddd9c545953a2efb2de430080b7346fa3a74aafa0e53443422764d5a021aa39f42ae44ece1c58b0e1a9a4c8')
+;
 
 INSERT INTO `prodotto`(`IDprodotto`, `titolo`, `prezzo`, `quantita_scorta`, `descrizione`, `taglia`, `eta`, `immagine`, `sesso`) VALUES 
 ('01A0000', 'Bici bimbo 16” Avengers', 119.00, 8, 'BICI BIMBO MISURA 16” – AVENGERS – 2 FRENI – ruote in acciaio – gomme Gonfiabili – Ruota libera
