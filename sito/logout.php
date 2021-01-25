@@ -16,8 +16,10 @@
     session_destroy();
     var_dump($type);
     if($type == "admin"){
+        $type = "";
         header('Location: ./index-admin.php');
     } else{
+        $type = "";
         header('Location: ./index.php');
     }
 ?>

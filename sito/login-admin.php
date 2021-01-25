@@ -12,7 +12,7 @@ if(isset($_POST["email"]) && isset($_POST["pwd"])){
         registerLoggedAdmin($login_result[0]);
     }
 }
-
+$_SESSION["typeSession"] = "admin";
 if(isAdminLoggedIn()){
     $templateParams["titoloA"] = "KIDZ - AreaUtente";
     $templateParams["nomeA"] = "areautente-admin.php";

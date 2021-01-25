@@ -1,6 +1,7 @@
 <?php
 require_once 'bootstrap.php';
 
+$_SESSION["typeSession"] = "user";
 if(isset($_POST["email"]) && isset($_POST["pwd"])){
     $templateParams["errorelogin"] = "";
     $login_result = $dbh->checkLogin($_POST["email"], $_POST["pwd"]);

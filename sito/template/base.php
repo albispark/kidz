@@ -224,7 +224,7 @@ else{
               <ul class="header_menu d-flex justify-content-end align-items-center p-0 m-0">
                 <!-- Header accedi -->
                 <li class="d-flex align-items-center">
-                  <a class="btn btn-primary border-0 bg-transparent d-flex align-items-center px-2"  <?php isActive("login.php");?> href="login.php" role="button">
+                  <a class="btn btn-primary border-0 bg-transparent d-flex align-items-center px-2" href="login.php" role="button">
                     <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="white" class="bi bi-person-circle" viewBox="0 0 16 16">
                       <path d="M13.468 12.37C12.758 11.226 11.195 10 8 10s-4.757 1.225-5.468 2.37A6.987 6.987 0 0 0 8 15a6.987 6.987 0 0 0 5.468-2.63z"/>
                       <path fill-rule="evenodd" d="M8 9a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>

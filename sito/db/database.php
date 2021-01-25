@@ -279,6 +279,14 @@
             $stmt->bind_param('s',$idprod);
             return $stmt->execute();
         }
+
+        public function notificaBenveuto($iduser){
+            $query = "INSERT INTO ricezione (IDuser, IDnotifica, visualizzato) VALUES (?, 'BENVENU', 0)";
+            $stmt = $this->db->prepare($query);
+            $stmt->bind_param('s',$iduser);
+            return $stmt->execute();
+        }
+
     }
 
 ?>
