@@ -247,6 +247,21 @@
             return $result->fetch_all(MYSQLI_ASSOC);
         }
 
+        public function setMessagesRead($iduser){
+            $stmt = $this->db->prepare("UPDATE ricezione SET visualizzato = 1 WHERE visualizzato = 0 AND IDuser = ?");
+            $stmt->bind_param('s',$iduser);
+            return $stmt->execute();
+        }
+
+        public function getUnreadMessages($iduser){
+            $stmt = $this->db->prepare("SELECT r.visualizzato, n.titolo, n.messaggio, n.data  FROM ricezione as r, notifica as n WHERE r.IDnotifica = n.IDnotifica AND r.IDuser = ? AND r.visualizzato = 0");
+            $stmt->bind_param("s", $iduser);
+            $stmt->execute();
+            $result = $stmt->get_result();
+
+            return $result->fetch_all(MYSQLI_ASSOC);
+        }
+
         public function deleteCategoriesOfProduct($idprod){
             $stmt = $this->db->prepare("DELETE FROM appartenenza WHERE IDprodotto = ?");
             $stmt->bind_param('s',$idprod);
@@ -258,7 +273,6 @@
             $stmt->bind_param('ssdississs',$idprod, $titolo, $prezzo, $quantita,$descrizione, $taglia, $eta, $imgarticolo, $sesso,$idprod);
             return $stmt->execute();
         }
-
 
         public function deleteProduct($idprod){
             $stmt = $this->db->prepare("DELETE FROM prodotto WHERE IDprodotto = ?");

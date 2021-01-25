@@ -51,8 +51,11 @@ INSERT INTO `notifica`(`IDnotifica`, `titolo`, `messaggio`, `data`) VALUES
 ('000N100','ORDINE SPEDITO', "L'ordine #456694 è stato spedito.", "2021-01-19"),
 ('000N200','PRODOTTO DISPONIBILE', "L'articolo che volevi è tornato disponibile.", "2021-01-11"),
 ('000N300','SALDI', "Approfitta degli sconti! Tantissimi prodotti a prezzi convenienti", "2020-12-24");
+('000N400','PRODOTTO TERMINATO', "Le scorte del prodotto sono terminate. Provvedi a un nuovo rifornimento", "2021-01-9");
+
 
 INSERT INTO `ricezione`(`IDuser`, `IDnotifica`, `visualizzato`) VALUES
 ('AN00000','000N300', 1),
 ('AN00000','000N100', 1),
+('S000000','000N100', 0),
 ('AN00000','000N200', 0);

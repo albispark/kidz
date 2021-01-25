@@ -14,11 +14,10 @@
   <div class="row col-12 py-3 m-0 justify-content-center">
     <div class="col-sm-1"></div>
     <div class="row col-sm-10 col-md-12">
-
-      <?php foreach( $templateParams["prodotti"] as $prod): ?>
       
       <!-- Items -->
       <div class="col-sm-12 col-md-8">
+        <?php foreach( $templateParams["prodotti"] as $prod): ?>
         <div class="row border-bottom">
           <div class="col-6 product p-0 m-0 text-center px-4 my-2">
             <img src="<?php echo UPLOAD_DIR.$prod["immagine"];?>" alt="<?php echo UPLOAD_DIR.$prod["titolo"];?>">
@@ -35,9 +34,8 @@
             </footer>
           </div>
         </div>
+        <?php endforeach; ?>
       </div>
-
-      <?php endforeach; ?>
 
       <!-- Summary -->
       <div class="col-sm-12 my-5 col-md-4">
