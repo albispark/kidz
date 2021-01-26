@@ -3,7 +3,11 @@ require_once 'bootstrap-admin.php';
 
 if(isset($_POST["email"]) && isset($_POST["pwd"])){
     $templateParams["errorelogin"] = "";
-    $login_result = $dbh->checkLoginAdmin($_POST["email"], $_POST["pwd"]);
+    $user = $dbh->getUserByEmail($_POST["email"]);
+    if(!empty($user)){
+        $password = hash('sha512', $_POST["pwd"].$user["salt"]);
+    }
+    $login_result = $dbh->checkLoginAdmin($_POST["email"], $password);
     if(count($login_result)==0){
         $templateParams["errorelogin"] = "Errore! Username o password non corretti";
     }

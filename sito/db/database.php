@@ -299,13 +299,19 @@
             return $stmt->execute();
         }
 
+        public function creaNotificaIscritti($idnotif, $msg){
+            $query = "INSERT INTO notifica (IDnotifica, titolo, messaggio, data) VALUES (?, 'UTENTI ISCRITTI', ? , now())";
+            $stmt = $this->db->prepare($query);
+            $stmt->bind_param('ss',$idnotif, $msg);
+            return $stmt->execute();
+        }
+
         public function notificaAcquisto($iduser, $idnotif){
             $query = "INSERT INTO ricezione (IDuser, IDnotifica, visualizzato) VALUES (?, ?, 0)";
             $stmt = $this->db->prepare($query);
             $stmt->bind_param('ss',$iduser, $idnotif);
             return $stmt->execute();
         }
-
         public function getNotifica($idnotif){
             $stmt = $this->db->prepare("SELECT titolo, messaggio, data FROM notifica WHERE IDnotifica = ? ");
             $stmt->bind_param("s", $idnotif);
@@ -316,13 +322,37 @@
         }
 
         public function getNumberOfCartProduct($idUser){
-            $stmt = $this->db->prepare("SELECT quantita FROM in_carrello WHERE IDUser = ? ");
+            $stmt = $this->db->prepare("SELECT c.quantita, p.prezzo FROM in_carrello as c, prodotto as p WHERE c.IDUser = ? AND c.IDprodotto = p.IDprodotto");
             $stmt->bind_param("s", $idUser);
             $stmt->execute();
             $result = $stmt->get_result();
 
             return $result->fetch_all(MYSQLI_ASSOC);
         }
+
+        public function updateQuantityInCart($idprod,$iduser,$q){
+            $stmt = $this->db->prepare("UPDATE in_carello SET quantita = (quantita - ?) WHERE IDprodotto = ?AND IDuser = ?");
+            $stmt->bind_param('iss',$q,$idprod,$iduser);
+            return $stmt->execute();
+        }
+
+        public function getNumberOfSubscriber(){
+            $stmt = $this->db->prepare("SELECT IDuser FROM utente WHERE admin = 0");
+            $stmt->execute();
+            $result = $stmt->get_result();
+
+            return $result->fetch_all(MYSQLI_ASSOC);
+        }
+
+        public function getAdmin(){
+            
+            $stmt = $this->db->prepare("SELECT IDuser FROM utente WHERE admin = 1");
+            $stmt->execute();
+            $result = $stmt->get_result();
+
+            return $result->fetch_all(MYSQLI_ASSOC);
+        }
+
 
     }
 
