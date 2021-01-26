@@ -4,7 +4,7 @@
         <div class=" col-10 col-md-6 border my-4 p-4">
             <form action="login-admin.php" class="was-validated" method="POST">
             <div class="form-group">
-                <label for="uname">Email:</label>
+                <label for="email">Email:</label>
                 <input type="text" class="form-control" placeholder="Inserci Email" name="email" id="email" required>
                 <div class="invalid-feedback">Necessario compilare il campo.</div>
             </div>
