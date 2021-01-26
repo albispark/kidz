@@ -145,6 +145,12 @@
             return $result->fetch_all(MYSQLI_ASSOC);
         }
 
+        public function deleteProductFromCart($iduser,$idprod){
+            $stmt = $this->db->prepare("DELETE FROM in_carrello WHERE IDprodotto = ? AND IDuser = ?");
+            $stmt->bind_param("ss", $idprod, $iduser);
+            return $stmt->execute();
+        }
+
         public function insertInWishlist($idprod, $iduser){
             $stmt = $this->db->prepare("INSERT INTO in_wishlist(IDprodotto, IDuser) VALUES (?, ?)");
             $stmt->bind_param("ss", $idprod, $iduser);
@@ -303,6 +309,15 @@
         public function getNotifica($idnotif){
             $stmt = $this->db->prepare("SELECT titolo, messaggio, data FROM notifica WHERE IDnotifica = ? ");
             $stmt->bind_param("s", $idnotif);
+            $stmt->execute();
+            $result = $stmt->get_result();
+
+            return $result->fetch_all(MYSQLI_ASSOC);
+        }
+
+        public function getNumberOfCartProduct($idUser){
+            $stmt = $this->db->prepare("SELECT quantita FROM in_carrello WHERE IDUser = ? ");
+            $stmt->bind_param("s", $idUser);
             $stmt->execute();
             $result = $stmt->get_result();
 

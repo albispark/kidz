@@ -15,7 +15,7 @@ else if($_GET['type'] == "carrello"){
         $idprodotto = $_GET["idprod"];
     }
     $dbh->insertInCart($idprodotto, $_SESSION["IDuser"]);
-    header('Location: ./prodotto.php?id='.$_GET["idprod"]);
+    header('Location: ./carrello.php?id='.$_SESSION["IDuser"]);
 }
 
 ?>
