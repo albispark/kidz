@@ -12,7 +12,7 @@
           </div>
 
           <div class="form-group">
-            <label for="cog">cognome</label>
+            <label for="cognome">cognome</label>
             <input type="text" class="form-control" placeholder="Cognome" name="cognome" id="cognome" required>
             <div class="invalid-feedback">Necessario compilare il campo.</div>
           </div>
@@ -26,7 +26,7 @@
           <!-- tipo testo o password ??-->
           <div class="form-group">
             <label for="psw">password</label>
-            <input type="text" class="form-control" placeholder="Password" id="psw" name="psw" required>
+            <input type="password" class="form-control" placeholder="Password" id="psw" name="psw" required>
             <div class="invalid-feedback">Necessario compilare il campo.</div>
           </div>
 

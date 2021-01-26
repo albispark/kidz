@@ -12,6 +12,7 @@ if(isset($_GET["id"])){
     $iduser = $_GET["id"];
 }
 $templateParams["prodotti"] = $dbh->getCartProducts($iduser);
+
 require 'template/base.php';
 
 ?>

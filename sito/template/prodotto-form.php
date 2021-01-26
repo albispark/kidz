@@ -11,15 +11,15 @@
         <div class="add_product col-10 col-md-6 p-4">
           <form action="processa-prodotto.php" class="was-validated insert" method="POST" enctype="multipart/form-data">
             <div class="form-group">
-              <label for="cod">Codice:</label>
+              <label for="IDprodotto">Codice:</label>
               <input type="text" class="form-control" placeholder="" name="IDprodotto" id="IDprodotto" value="<?php echo $prod["IDprodotto"]; ?>" required>
             </div>
             <div class="form-group">
-              <label for="title">Titolo:</label>
+              <label for="titolo">Titolo:</label>
               <input type="text" class="form-control" placeholder="" id="titolo" name="titolo"  value="<?php echo $prod["titolo"]; ?>"required>
             </div>
             <div class="form-group">
-                <label for="descr">Descrizione:</label> <br>
+                <label for="descrizione">Descrizione:</label> <br>
                 <textarea class="form-control" rows="5" id="descrizione" name="descrizione" required><?php echo $prod["descrizione"]; ?></textarea>
             </div>
             <div class="form-group">
@@ -27,7 +27,7 @@
                 <input type="text" class="form-control" placeholder="" id="prezzo" name="prezzo"  value="<?php echo $prod["prezzo"]; ?>" required>
             </div>
             <div class="form-group">
-                <label for="qt">Quantità:</label>
+                <label for="quantita_scorta">Quantità:</label>
                 <input type="text" class="form-control" placeholder="" id="quantita_scorta" name="quantita_scorta"  value="<?php echo $prod["quantita_scorta"]; ?>" required>
             </div>
             
@@ -42,7 +42,7 @@
             </div>
 
             <div class="form-group">
-              <label for="eta">Sesso (F-femmina, M-maschio, U-unisex):</label>
+              <label for="sesso">Sesso (F-femmina, M-maschio, U-unisex):</label>
               <input type="text" class="form-control" placeholder="" id="sesso" name="sesso"  value="<?php echo $prod["sesso"]; ?>"required>
             </div>
                     
