@@ -47,7 +47,7 @@
         <p class="m-0 p-3 border">Totale parziale: ...,...€</p>
         <p class="m-0 p-3 border">Spedizione: GRATIS</p>
         <p class="m-0 p-3 border">TOTALE: ...,...€</p>
-        <a class="btn btn-primary rounded-0 mb-2 btn-block" href="#" role="button">Acquista</a>
+        <a class="btn btn-primary rounded-0 mb-2 btn-block" href="acquisto-completo.php" role="button">Acquista</a>
       </div>
 
     </div>

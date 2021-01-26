@@ -41,7 +41,3 @@
       </div>
       <div class="col-1 col-md-3"></div>
   </div>
-
-  <form action="processa-notifica.php" method="POST">
-    <input type="hidden" name="tipoNotifica" value="1" />
-  </form>
