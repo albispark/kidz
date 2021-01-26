@@ -5,27 +5,27 @@
     </div>
   </div>
 
-  <div class="row p-1 m-3 justify-content-center">
+  <div class="row p-1 mx-3 mt-3 mb-1 justify-content-center">
     <header>
       <h2>Carrello</h2>
     </header>
   </div>
 
-  <div class="row col-12 py-3 m-0 justify-content-center">
+  <div class="row col-12 py-3 px-0 m-0 justify-content-center">
     <div class="col-sm-1"></div>
     <div class="row col-sm-10 col-md-12">
       
       <!-- Items -->
       <div class="col-sm-12 col-md-8">
-        <?php foreach( $templateParams["prodotti"] as $prod): ?>
-        <div class="row border-bottom">
-          <div class="col-6 product p-0 m-0 text-center px-4 my-2">
+        <?php foreach($templateParams["prodotti"] as $prod): ?>
+        <div class="row border-bottom py-3">
+          <div class="col-6 product p-0 m-0 text-center align-items-center px-1 my-2">
             <img src="<?php echo UPLOAD_DIR.$prod["immagine"];?>" alt="<?php echo UPLOAD_DIR.$prod["titolo"];?>">
-                <div class="overlay">
+            <div class="overlay d-md-block d-none">
                 <a class="product_label rounded font-weight-normal" href="prodotto.php?id=<?php echo $prod["IDprodotto"]; ?>">Scopri di più</a>
             </div>
           </div>
-          <div class="col-6 p-0 m-0 px-4 smaller_text">
+          <div class="col-6 p-1 m-0 px-md-4 pr-2 pl-3 smaller_text">
             <h3 class="my-3 font-weight-bold"><?php echo $prod["titolo"]; ?></h3>
             <p class="d-none d-md-block"><?php echo $prod["descrizione"]; ?></p>
             <footer class="text-right">
@@ -34,7 +34,7 @@
               <!-- Quantity selector -->
               <?php $id =$prod['IDprodotto']; $p = $prod['prezzo'] ?>
               <button class="btn btn-primary btn-sm" onclick='meno("<?php echo $prod["prezzo"];?>","<?php echo $prod["IDprodotto"]; ?>")'>-</button>
-              <span id="numero_<?php echo $prod["IDprodotto"]; ?>" class="mx-3">1</span>
+              <span id="numero_<?php echo $prod["IDprodotto"]; ?>" class="mx-md-3 mx-2">1</span>
               <button class="btn btn-primary btn-sm" id = "aggiungi" onclick='aggiungi("<?php echo $prod["prezzo"];?>","<?php echo $prod["IDprodotto"]; ?>")'>+</button>
 
               <a class="btn border-danger text-danger font-weight-normal my-2 ml-2" href="removeProd.php?type=carrello&idprod=<?php echo $prod["IDprodotto"];?>" role="button">Rimuovi</a>
@@ -46,11 +46,13 @@
 
       <!-- Summary -->
       <div class="col-sm-12 my-5 col-md-4">
-        <h3 class="m-0 p-3 border">Dettagli d'ordine</h3>
-        <p class="m-0 p-3 border tot">Totale parziale: ...,...€</p>
-        <p class="m-0 p-3 border">Spedizione: GRATIS</p>
-        <p class="m-0 p-3 border tot">TOTALE: ...,...€</p>
-        <a class="btn btn-primary rounded-0 mb-2 btn-block" href="acquisto-completo.php" role="button">Acquista</a>
+        <section class="sticky-top pt-md-4">
+          <h3 class="m-0 p-3 border">Dettagli d'ordine</h3>
+          <p class="m-0 p-3 border tot">Totale parziale: ...,...€</p>
+          <p class="m-0 p-3 border">Spedizione: GRATIS</p>
+          <p class="m-0 p-3 border tot">TOTALE: ...,...€</p>
+          <a class="btn btn-primary rounded-0 mb-2 btn-block" href="acquisto-completo.php" role="button">Acquista</a>
+        </section>
       </div>
 
     </div>
