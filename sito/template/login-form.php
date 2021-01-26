@@ -22,7 +22,7 @@
 
             <button type="submit" class="btn btn-primary btn-block mt-2">Accedi</button>
             <div class="dropdown-divider"></div>
-            <a class="dropdown-item text-center" href="registration.php">Non hai un account? Iscriviti ora</a>
+            <a class="btn btn-block mt-2 btn-link text-dark text-center" href="registration.php">Non hai un account? Iscriviti ora</a>
             </form>
         </div>
         <div class="col-1 col-md-3 p-0"></div>
