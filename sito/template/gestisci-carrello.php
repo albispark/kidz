@@ -32,7 +32,7 @@
               <p><?php echo $prod["prezzo"]; ?>€</p>
 
               <!-- Quantity selector -->
-              <button class="btn btn-primary" id="meno" onclick=meno(<?php echo $templateParams["dettagliEvento"]["Prezzo"]?>)>-</button><span id="numeroBiglietti" class="mx-3">1</span><button class="btn btn-primary" id = "aggiungi" onclick=aggiungi(<?php echo $templateParams["dettagliEvento"]["Prezzo"]?>)>+</button>
+              <button class="btn btn-primary" id="meno" onclick=meno(<?php echo $prod["quantita"];?>)>-</button><span id="numero_<?Php echo $prod["IDprodotto"]; ?>" class="mx-3">1</span><button class="btn btn-primary" id = "aggiungi" onclick=aggiungi(<?php echo $prod["quantita"]?>)>+</button>
 
               <a class="btn border-danger text-danger font-weight-normal my-0 ml-2" href="removeProd.php?type=carrello&idprod=<?php echo $prod["IDprodotto"];?>" role="button">Rimuovi</a>
             </footer>
@@ -57,7 +57,8 @@
 
 <script>
 
-function meno(p) {
+function meno(p,id) {
+    console.log(id);
     let n = $("#numeroBiglietti").text();
     if(parseInt(n)-1 >= 1){
         n = parseInt(n)-1;

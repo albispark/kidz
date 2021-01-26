@@ -5,6 +5,7 @@ $templateParams["titolo"] = "KIDZ - Registrazione";
 $templateParams["nome"] = "registration-form.php";
 $templateParams["categorie"] = $dbh->getCategories();
 
+$_SESSION["typeSession"] = "user";
 if(isset($_POST["email"]) && isset($_POST["psw"])){
       // Recupero la password criptata dal form di inserimento.
       $password = $_POST['psw'];
