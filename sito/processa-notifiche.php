@@ -15,6 +15,10 @@ switch($_SESSION["notiftype"]){
         $dbh->creaNotificaAcquisto($codice, $msg);
         $dbh->notificaAcquisto($_SESSION["IDuser"], $codice);
     break;
+    //notifica admin: prodotto terminato
+    case 3:
+        
+    break;
     default:
  }
 

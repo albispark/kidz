@@ -32,7 +32,10 @@
               <p><?php echo $prod["prezzo"]; ?>€</p>
 
               <!-- Quantity selector -->
-              <button class="btn btn-primary btn-sm" id="meno" onclick=meno(<?php echo $prod["quantita"];?>)>-</button><span id="numero_<?Php echo $prod["IDprodotto"]; ?>" class="mx-3">1</span><button class="btn btn-primary btn-sm" id = "aggiungi" onclick=aggiungi(<?php echo $prod["quantita"]?>)>+</button>
+              <?php $id =$prod['IDprodotto']; $p = $prod['prezzo'] ?>
+              <button class="btn btn-primary btn-sm" onclick='meno("<?php echo $prod["prezzo"];?>","<?php echo $prod["IDprodotto"]; ?>")'>-</button>
+              <span id="numero_<?php echo $prod["IDprodotto"]; ?>" class="mx-3">1</span>
+              <button class="btn btn-primary btn-sm" id = "aggiungi" onclick='aggiungi("<?php echo $prod["prezzo"];?>","<?php echo $prod["IDprodotto"]; ?>")'>+</button>
 
               <a class="btn border-danger text-danger font-weight-normal my-2 ml-2" href="removeProd.php?type=carrello&idprod=<?php echo $prod["IDprodotto"];?>" role="button">Rimuovi</a>
             </footer>
@@ -44,38 +47,37 @@
       <!-- Summary -->
       <div class="col-sm-12 my-5 col-md-4">
         <h3 class="m-0 p-3 border">Dettagli d'ordine</h3>
-        <p class="m-0 p-3 border">Totale parziale: ...,...€</p>
+        <p class="m-0 p-3 border tot">Totale parziale: ...,...€</p>
         <p class="m-0 p-3 border">Spedizione: GRATIS</p>
-        <p class="m-0 p-3 border">TOTALE: ...,...€</p>
+        <p class="m-0 p-3 border tot">TOTALE: ...,...€</p>
         <a class="btn btn-primary rounded-0 mb-2 btn-block" href="acquisto-completo.php" role="button">Acquista</a>
       </div>
 
     </div>
     <div class="col-sm-1"></div>
   </div>
-            
+
 
 <script>
 
-function meno(p,id) {
-    console.log(id);
-    let n = $("#numeroBiglietti").text();
+function meno(p,idp) {
+    var res = "numero_".concat(idp);
+    let n = $('#' + res).text();
     if(parseInt(n)-1 >= 1){
         n = parseInt(n)-1;
-        $("#numeroBiglietti").text(n);
-        $("#tot").text(n*p);
-
+        $('#' + res).text(n);
+        $(".tot").text(n*p);
     }
-
 }
-function aggiungi(p) {
-    let n = $("#numeroBiglietti").text();
+
+function aggiungi(p,idp) {
+  var res = "numero_".concat(idp);
+  let n = $('#' + res).text();
     if(parseInt(n)+1 <= 5){
         n = parseInt(n)+1;
-        $("#numeroBiglietti").text(n);
-        $("#tot").text(n*p);
-
+        $('#' + res).text(n);
+        $(".tot").text(n*p);
     }
-
 }
+
 </script>
