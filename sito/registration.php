@@ -10,6 +10,8 @@ if(isset($_POST["email"]) && isset($_POST["psw"])){
       $password = $_POST['psw'];
       $email = $_POST['email'];
       
+
+
       if(!empty($dbh->getUserByEmail($email))) {
          $templateParams["failure"] = 'La registrazione non è andata a buon fine. Esiste già un account con questa email';
       } else {
@@ -26,7 +28,8 @@ if(isset($_POST["email"]) && isset($_POST["psw"])){
             if($result) {
                 $login_result = $dbh->checkLogin($_POST["email"], $password); 
                 registerLoggedUser($login_result[0]);
-                header('Location: ./');
+                $_SESSION["notiftype"] = 1;
+                include("processa-notifiche.php");
             } else {
                $templateParams["failure"] = "La registrazione non è andata a buon fine.";
             }
