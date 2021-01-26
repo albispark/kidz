@@ -3,7 +3,6 @@
 $iduser = -1;
 if(isUserLoggedIn()){
     $iduser = $_SESSION["IDuser"];
-    var_dump($iduser);
     $templateParams["notificheHeader"] = $dbh->getUnreadMessages($iduser);
 }
 else{

@@ -5,7 +5,6 @@ $_SESSION["typeSession"] = "user";
 if(isset($_POST["email"]) && isset($_POST["pwd"])){
     $templateParams["errorelogin"] = "";
     $user = $dbh->getUserByEmail($_POST["email"]);
-    var_dump($_POST["email"]);
     if(!empty($user)){
         $password = hash('sha512', $_POST["pwd"].$user["salt"]);
     }

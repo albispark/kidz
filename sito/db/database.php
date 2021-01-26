@@ -183,7 +183,6 @@
 
             return $result->fetch_all(MYSQLI_ASSOC);
         }
-
             
         public function getUserByEmail($email){
             $query = "SELECT IDuser,password,salt FROM utente WHERE email=?";
@@ -238,8 +237,8 @@
             return $stmt->execute();
         }
 
-        public function getMessages($iduser){
-            $stmt = $this->db->prepare("SELECT r.visualizzato, n.titolo, n.messaggio, n.data  FROM ricezione as r, notifica as n WHERE r.IDnotifica = n.IDnotifica AND r.IDuser = ?");
+        public function getReadMessages($iduser){
+            $stmt = $this->db->prepare("SELECT r.visualizzato, n.titolo, n.messaggio, n.data  FROM ricezione as r, notifica as n WHERE r.IDnotifica = n.IDnotifica AND r.IDuser = ? AND r.visualizzato = 1");
             $stmt->bind_param("s", $iduser);
             $stmt->execute();
             $result = $stmt->get_result();
@@ -285,6 +284,29 @@
             $stmt = $this->db->prepare($query);
             $stmt->bind_param('s',$iduser);
             return $stmt->execute();
+        }
+
+        public function creaNotificaAcquisto($idnotif, $msg){
+            $query = "INSERT INTO notifica (IDnotifica, titolo, messaggio, data) VALUES (?, 'ORDINE EFFETTUATO', ? , now())";
+            $stmt = $this->db->prepare($query);
+            $stmt->bind_param('ss',$idnotif, $msg);
+            return $stmt->execute();
+        }
+
+        public function notificaAcquisto($iduser, $idnotif){
+            $query = "INSERT INTO ricezione (IDuser, IDnotifica, visualizzato) VALUES (?, ?, 0)";
+            $stmt = $this->db->prepare($query);
+            $stmt->bind_param('ss',$iduser, $idnotif);
+            return $stmt->execute();
+        }
+
+        public function getNotifica($idnotif){
+            $stmt = $this->db->prepare("SELECT titolo, messaggio, data FROM notifica WHERE IDnotifica = ? ");
+            $stmt->bind_param("s", $idnotif);
+            $stmt->execute();
+            $result = $stmt->get_result();
+
+            return $result->fetch_all(MYSQLI_ASSOC);
         }
 
     }
