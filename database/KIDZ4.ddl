@@ -52,10 +52,10 @@ create table PRODOTTO (
      titolo char(25) not null,
      prezzo decimal(5,2) not null,
      quantita_scorta int not null,
-     descrizione varchar(500) not null,
+     descrizione varchar(1000) not null,
      taglia char(10) not null,
      eta int not null,
-     immagine char(25) not null,
+     immagine char(80) not null,
      sesso char(1) not null,
      constraint IDPRODOTTO_ID primary key (IDprodotto));
 
@@ -79,10 +79,11 @@ create table SOTTOCATEGORIA (
 create table UTENTE (
      IDuser char(7) not null,
      email char(30) not null,
-     password char(30) not null,
+     password char(128) not null,
      nome char(20) not null,
      cognome char(20) not null,
      admin tinyint(1) not null,
+     salt char(128) not null,
      constraint IDCLIENTE primary key (IDuser),
      constraint IDCLIENTE_1 unique (email));
 
