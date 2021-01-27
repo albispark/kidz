@@ -23,7 +23,7 @@
     <div class="col-md-1 col-0"></div>
         <div class="row col-md-10 col-12">
             <?php foreach($templateParams["prodotti"] as $prod): ?>
-                <section class="col-md-3 col-6 border p-2 p-md-3">
+                <section class="d-flex flex-column justify-content-between col-md-3 col-6 border p-2 p-md-3">
                     <div class="product p-0 m-0 text-center px-1 my-2">
                         <img src="<?php echo UPLOAD_DIR.$prod["immagine"];?>" alt="<?php echo $prod["titolo"];?>">
                     </div>

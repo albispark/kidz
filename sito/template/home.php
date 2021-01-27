@@ -53,8 +53,8 @@
 
     <!-- Ghirigori -->
 
-    <div class="row text-center mx-0 my-5 py-0 px-3">
-      <img class="d-none d-md-block my-5" src="img/stitch.png"  alt="TODO"/>
+    <div class="row text-center d-none d-md-block mx-0 my-5 py-0 px-3">
+      <img class="my-5" src="img/stitch.png"  alt="TODO"/>
     </div>
 
     <!-- Products -->
@@ -67,16 +67,14 @@
         </header>
       </div>
 
-      <!-- First desktop row -->
       <div class="row img_width_90">
         <div class="col-md-1"></div>
-        <!-- First mobile row -->
         <div class="row col-md-10 py-4">
             <?php foreach($templateParams["prodotticasuali"] as $prod): ?>
             
-                <section class="smaller_text col-6 col-md-3 p-0 m-0 text-center">
+                <section class="d-flex flex-column justify-content-between smaller_text col-6 col-md-3 p-0 m-0 mb-4 text-center">
                     <img src="<?php echo UPLOAD_DIR.$prod["immagine"]?>"  alt="Prodotto <?php echo $prod["titolo"]?>">
-                    <h3 class="font-weight-normal"><?php echo $prod["titolo"]?></h3>
+                    <h3 class="font-weight-normal mt-3"><?php echo $prod["titolo"]?></h3>
                     <a class="text-primary text-uppercase font-weight-bolder" href="prodotto.php?id=<?php echo $prod["IDprodotto"]; ?>">Acquista ora</a>
                 </section>
             <?php endforeach;?>

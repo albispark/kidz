@@ -134,17 +134,6 @@ body {
     font-size: 0.9em;
 }
 
-.product_search {
-    position: relative;
-    min-height: 150px;
-}
-
-.product_search_info {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-}
-
 .product {
     position: relative;
     width: 100%;
