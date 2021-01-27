@@ -12,16 +12,16 @@
             </svg>
         </div>
         <div class="text-left col-md-7 p-md-0 pl-md-4 p-3 bigger_text dati_personali">
-            <h3 class="text-bolder">I miei dati</h3>
+            <h3 class="font-weight-bolder mb-3">I miei dati</h3>
             <ul class="p-0">
                 <li>
-                    <p>Nome:<?php echo " ".$_SESSION["nome"];?></p>
+                    <p><strong>Nome:</strong><?php echo " ".$_SESSION["nome"];?></p>
                 </li>
                 <li>
-                    <p>Cognome:<?php echo " ".$_SESSION["cognome"];?></p>
+                    <p><strong>Cognome:</strong><?php echo " ".$_SESSION["cognome"];?></p>
                 </li>
                 <li>
-                    <p>Email:<?php echo " ".$_SESSION["email"];?></p>
+                    <p><strong>Email:</strong><?php echo " ".$_SESSION["email"];?></p>
                 </li>
                 <li class="text-right">
                     <a href="logout.php" class="btn btn-secondary" role="button"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white" class="bi bi-box-arrow-right" viewBox="0 0 16 16">

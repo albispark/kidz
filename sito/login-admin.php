@@ -6,8 +6,10 @@ if(isset($_POST["email"]) && isset($_POST["pwd"])){
     $user = $dbh->getUserByEmail($_POST["email"]);
     if(!empty($user)){
         $password = hash('sha512', $_POST["pwd"].$user["salt"]);
+        $login_result = $dbh->checkLoginAdmin($_POST["email"], $password);
+    }else {
+        $login_result =[];
     }
-    $login_result = $dbh->checkLoginAdmin($_POST["email"], $password);
     if(count($login_result)==0){
         $templateParams["errorelogin"] = "Errore! Username o password non corretti";
     }
