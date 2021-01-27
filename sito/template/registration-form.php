@@ -8,26 +8,22 @@
           <div class="form-group ">
             <label for="nome">nome</label>
             <input type="text" class="form-control" placeholder="Nome" id="nome" name="nome" required>
-            <div class="invalid-feedback">Necessario compilare il campo.</div>
           </div>
 
           <div class="form-group">
             <label for="cognome">cognome</label>
             <input type="text" class="form-control" placeholder="Cognome" name="cognome" id="cognome" required>
-            <div class="invalid-feedback">Necessario compilare il campo.</div>
           </div>
 
           <div class="form-group">
             <label for="email">email</label>
             <input type="text" class="form-control" placeholder="Indirizzo email" id="email" name="email" required>
-            <div class="invalid-feedback">Necessario compilare il campo.</div>
           </div>
 
           <!-- tipo testo o password ??-->
           <div class="form-group">
             <label for="psw">password</label>
             <input type="password" class="form-control" placeholder="Password" id="psw" name="psw" required>
-            <div class="invalid-feedback">Necessario compilare il campo.</div>
           </div>
 
           <?php if(isset($templateParams["failure"])): ?>

@@ -5,12 +5,10 @@
             <div class="form-group">
                 <label for="email">Email:</label>
                 <input type="text" class="form-control" placeholder="Inserci Email" name="email" id="email" required>
-                <div class="invalid-feedback">Necessario compilare il campo.</div>
             </div>
             <div class="form-group">
                 <label for="pwd">Password:</label>
                 <input type="password" class="form-control" placeholder="Inserci Password" id="pwd" name="pwd" required>
-                <div class="invalid-feedback">Necessario compilare il campo.</div>
             </div>
 
             
