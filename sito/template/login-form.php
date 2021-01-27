@@ -6,7 +6,7 @@
                 <label for="email">Email:</label>
                 <input type="text" class="form-control" placeholder="Inserci Email" name="email" id="email" required>
             </div>
-            <div class="form-group">
+            <div class="form-group mt-2">
                 <label for="pwd">Password:</label>
                 <input type="password" class="form-control" placeholder="Inserci Password" id="pwd" name="pwd" required>
             </div>
