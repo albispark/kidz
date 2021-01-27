@@ -1,3 +1,21 @@
+
+<?php 
+$iduser = -1;
+if(isUserLoggedIn()){
+    $iduser = $_SESSION["IDuser"];
+    $templateParams["notificheHeader"] = $dbh->getUnreadMessages($iduser);
+    $templateParams["numeroProdottiCarello"] = $dbh->getNumberOfCartProduct($iduser);
+    $somma = 0;
+    foreach($templateParams["numeroProdottiCarello"] as $prod){
+      $somma = $somma + $prod["quantita"];
+    }
+}
+else{
+    $templateParams["notificheHeader"] = [];
+}
+
+?>
+
 <!doctype html>
 <html lang="it">
 <head>
@@ -10,6 +28,7 @@
     <link rel="stylesheet" href="css/style.css" >
     <script src="js/jquery-1.11.3.min.js"></script>
     <script src="js/functions.js"></script>
+    <script type="text/javascript" src="js/sha512.js"></script>
     <title><?php echo $templateParams["titolo"]?></title>
 </head>
 <body class="container-fluid p-0">
@@ -28,26 +47,47 @@
                     <button type="button" id="focus_btn" class="btn-close border-0 bg-transparent" aria-label="Close">X</button>
                   </li>
                   <li class="p-2">
-                    <a href="inbox.php">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" class="bi bi-envelope" viewBox="0 0 16 16">
-                        <path fill-rule="evenodd" d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2zm13 2.383l-4.758 2.855L15 11.114v-5.73zm-.034 6.878L9.271 8.82 8 9.583 6.728 8.82l-5.694 3.44A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.739zM1 11.114l4.758-2.876L1 5.383v5.73z"/>
-                      </svg>
+                     <?php if(isUserLoggedIn()):?>
+                        <a href="inbox.php">
+                      <?php else: ?>
+                        <a href="login.php">
+                      <?php endif; ?>
+                      <?php if(empty($templateParams["notificheHeader"])):?>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" class="bi bi-envelope-open" viewBox="0 0 16 16">
+                        <path d="M8.47 1.318a1 1 0 0 0-.94 0l-6 3.2A1 1 0 0 0 1 5.4v.818l5.724 3.465L8 8.917l1.276.766L15 6.218V5.4a1 1 0 0 0-.53-.882l-6-3.2zM15 7.388l-4.754 2.877L15 13.117v-5.73zm-.035 6.874L8 10.083l-6.965 4.18A1 1 0 0 0 2 15h12a1 1 0 0 0 .965-.738zM1 13.117l4.754-2.852L1 7.387v5.73zM7.059.435a2 2 0 0 1 1.882 0l6 3.2A2 2 0 0 1 16 5.4V14a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V5.4a2 2 0 0 1 1.059-1.765l6-3.2z"/>
+                        </svg>
+                      <?php else: ?>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" class="bi bi-envelope-fill" viewBox="0 0 16 16">
+                        <path d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414.05 3.555zM0 4.697v7.104l5.803-3.558L0 4.697zM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586l-1.239-.757zm3.436-.586L16 11.801V4.697l-5.803 3.546z"/>
+                        </svg>
+                      <?php endif; ?>
                     </a>
                   </li>
                   <li class="p-2">
                     <a href="login.php">
+                      <?php if(isUserLoggedIn()):?>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" class="bi bi-person-lines-fill" viewBox="0 0 16 16">
+                        <path d="M6 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-5 6s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zM11 3.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4a.5.5 0 0 1-.5-.5zm.5 2.5a.5.5 0 0 0 0 1h4a.5.5 0 0 0 0-1h-4zm2 3a.5.5 0 0 0 0 1h2a.5.5 0 0 0 0-1h-2zm0 3a.5.5 0 0 0 0 1h2a.5.5 0 0 0 0-1h-2z"/>
+                      </svg>
+                      <?php else: ?>
                       <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"  fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
                         <path d="M13.468 12.37C12.758 11.226 11.195 10 8 10s-4.757 1.225-5.468 2.37A6.987 6.987 0 0 0 8 15a6.987 6.987 0 0 0 5.468-2.63z"/>
                         <path fill-rule="evenodd" d="M8 9a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
                         <path fill-rule="evenodd" d="M8 1a7 7 0 1 0 0 14A7 7 0 0 0 8 1zM0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8z"/>
-                      </svg>
+                      </svg> 
+                      <?php endif; ?>
                     </a>
                   </li>
                 </ul>
               </div>
             </li>
             <li>
-              <a href="wishlist.php">Wishlist</a>
+              <a
+                  <?php if(isUserLoggedIn()):?>
+                    href="wishlist.php?id=<?php echo $_SESSION["IDuser"]?>"
+                    <?php else: ?>
+                    href="login.php"
+                    <?php endif; ?>>Wishlist</a>
             </li>
             <?php foreach($templateParams["categorie"] as $categoria): ?>
                 <li>
@@ -76,7 +116,12 @@
               </a>
             </li>
             <li class="nav-item">
-              <a href="cart.php" title="Cart">
+              <a
+                  <?php if(isUserLoggedIn()):?>
+                    href="carrello.php?id=<?php echo $_SESSION["IDuser"]?>"
+                    <?php else: ?>
+                    href="login.php"
+                    <?php endif; ?> title="Cart">
                 <svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-cart-fill" fill="white" xmlns="http://www.w3.org/2000/svg">
                     <path fill-rule="evenodd" d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm7 0a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"/>
                 </svg>
@@ -116,44 +161,41 @@
 
                   <div class="dropdown">
                     <a class="btn btn-primary shadow-none border-0 bg-transparent dropdown-toggle d-flex align-items-center px-2" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white" class="bi bi-envelope-fill" viewBox="0 0 16 16">
-                        <path fill-rule="evenodd" d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414.05 3.555zM0 4.697v7.104l5.803-3.558L0 4.697zM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586l-1.239-.757zm3.436-.586L16 11.801V4.697l-5.803 3.546z"/>
-                      </svg>
+                      <?php if(empty($templateParams["notificheHeader"])):?>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-envelope-open" viewBox="0 0 16 16">
+                        <path d="M8.47 1.318a1 1 0 0 0-.94 0l-6 3.2A1 1 0 0 0 1 5.4v.818l5.724 3.465L8 8.917l1.276.766L15 6.218V5.4a1 1 0 0 0-.53-.882l-6-3.2zM15 7.388l-4.754 2.877L15 13.117v-5.73zm-.035 6.874L8 10.083l-6.965 4.18A1 1 0 0 0 2 15h12a1 1 0 0 0 .965-.738zM1 13.117l4.754-2.852L1 7.387v5.73zM7.059.435a2 2 0 0 1 1.882 0l6 3.2A2 2 0 0 1 16 5.4V14a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V5.4a2 2 0 0 1 1.059-1.765l6-3.2z"/>
+                        </svg>
+                      <?php else: ?>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="yellow" class="bi bi-envelope-fill" viewBox="0 0 16 16">
+                        <path d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414.05 3.555zM0 4.697v7.104l5.803-3.558L0 4.697zM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586l-1.239-.757zm3.436-.586L16 11.801V4.697l-5.803 3.546z"/>
+                        </svg>
+                      <?php endif; ?>
                       &nbsp; Inbox
                     </a>
 
                     <!-- Messaggi - TODO -->
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                       <ul id="notifications_menu" class="list-unstyled">
-                        <li class="mb-1">
-                          <a class="dropdown-item" href="#">
-                            <div class="notifications">
-                              <h5 class="m-0">PRODOTTO DISPONIBILE</h5>
-                              <p class="text-truncate m-0">Il prodotto "LEGO Star Wars" è tornato disponibile.</p>
-                            </div>
-                          </a>
-                          <hr class="my-1"/>
-                        </li>
-                        <li class="mb-1">
-                          <a class="dropdown-item" href="#">
-                            <div class="notifications">
-                              <h5 class="m-0">ORDINE SPEDITO</h5>
-                              <p class="text-truncate m-0">L'ordine #456694 è stato spedito.</p>
-                            </div>
-                          </a>
-                          <hr class="my-1"/>
-                        </li>
-                        <li class="mb-1">
-                          <a class="dropdown-item" href="#">
-                            <div class="notifications">
-                              <h5 class="m-0">CODICE SCONTO</h5>
-                              <p class="text-truncate m-0">Hai ancora dei prodotti nel tuo carrello! Acquistali con questo codice per ottenere uno sconto del 10% --> SCONTO10</p>
-                            </div>
-                          </a>
-                        </li>
-                        <li class="text-center mt-2 mb-1">
-                          <a href="inbox.php" class="text-primary font-weight-bold">VEDI TUTTI</a>
-                        </li>
+                      <?php if(isUserLoggedIn()):?>
+                        <?php foreach($templateParams["notificheHeader"] as $notif):?>
+                          <li class="mb-1">
+                            <a class="dropdown-item" href="inbox.php">
+                              <div class="notifications">
+                                <h5 class="m-0"><?php echo $notif["titolo"]?></h5>
+                                <p class="text-truncate m-0"><?php echo $notif["messaggio"]?></p>
+                              </div>
+                            </a>
+                            <hr class="my-1"/>
+                          </li>
+                        <?php endforeach;?>
+                          <li class="text-center mt-2 mb-1">
+                            <a href="inbox.php" class="text-primary font-weight-bold">VEDI TUTTI</a>
+                          </li>
+                        <?php else: ?>
+                          <li class="text-center mt-2 mb-1">
+                            <a href="login.php" class="text-primary font-weight-bold">LOGIN</a>
+                          </li>
+                        <?php endif; ?>
                       </ul>
                     </div>
                   </div>
@@ -161,7 +203,13 @@
 
                 <!-- Header wishlist -->
                 <li class="d-flex pr-3">
-                  <a class="btn btn-primary border-0 bg-transparent d-flex align-items-center px-2" href="wishlist.html" role="button">
+                  <a class="btn btn-primary border-0 bg-transparent d-flex align-items-center px-2"
+                  <?php if(isUserLoggedIn()):?>
+                    href="wishlist.php?id=<?php echo $_SESSION["IDuser"]?>"
+                    <?php else: ?>
+                    href="login.php"
+                    <?php endif; ?>
+                  role="button">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white" class="bi bi-suit-heart-fill" viewBox="0 0 16 16">
                       <path d="M4 1c2.21 0 4 1.755 4 3.92C8 2.755 9.79 1 12 1s4 1.755 4 3.92c0 3.263-3.234 4.414-7.608 9.608a.513.513 0 0 1-.784 0C3.234 9.334 0 8.183 0 4.92 0 2.755 1.79 1 4 1z"/>
                     </svg>
@@ -188,16 +236,29 @@
                       <path fill-rule="evenodd" d="M8 9a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
                       <path fill-rule="evenodd" d="M8 1a7 7 0 1 0 0 14A7 7 0 0 0 8 1zM0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8z"/>
                     </svg>
+                    <?php if(isUserLoggedIn()):?>
+                    &nbsp; <?php echo $_SESSION["nome"]; ?>
+                    <?php else: ?>
                     &nbsp; Accedi
+                    <?php endif; ?>
                   </a>
                 </li>
                 <!-- Header carrello -->
                 <li class="d-flex align-items-center">
-                  <a class="btn btn-primary border-0 bg-transparent d-flex align-items-center px-2" href="cart.php" role="button">
+                  <a class="btn btn-primary border-0 bg-transparent d-flex align-items-center px-2" <?php if(isUserLoggedIn()):?>
+                    href="carrello.php?id=<?php echo $_SESSION["IDuser"]?>"
+                    <?php else: ?>
+                    href="login.php"
+                    <?php endif; ?> role="button">
                     <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-cart-fill" fill="white" xmlns="http://www.w3.org/2000/svg">
                       <path fill-rule="evenodd" d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm7 0a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"/>
                   </svg>
-                    &nbsp; Carrello
+                      <?php if(isUserLoggedIn()):?>
+
+                        &nbsp; Carrello (<?php echo $somma;?>)
+                        <?php else:?>
+                          &nbsp; Carrello 
+                          <?php endif; ?>
                   </a>
                 </li>
               </ul>
