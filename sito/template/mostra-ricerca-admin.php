@@ -27,9 +27,8 @@
                     <div class="product p-0 m-0 text-center px-1 my-2">
                         <img src="<?php echo UPLOAD_DIR.$prod["immagine"];?>" alt="<?php echo $prod["titolo"];?>">
                     </div>
-                        <h2 class="font-weight-bold mb-2 mt-3"><?php echo $prod["titolo"];?></h2>
-                        <h3 class="font-weight-light my-2"><?php echo $prod["prezzo"];?> €</h3>
-                    </a>
+                    <h2 class="font-weight-bold mb-2 mt-3"><?php echo $prod["titolo"];?></h2>
+                    <h3 class="font-weight-light my-2"><?php echo $prod["prezzo"];?> €</h3>
                     <a class="btn btn-secondary font-weight-normal my-2" href="gestisci-prodotto.php?id=<?php echo $prod["IDprodotto"];?>&action=2" role="button">Modifica</a>
                     <a class="btn border-danger text-danger font-weight-normal my-2" href="gestisci-prodotto.php?id=<?php echo $prod["IDprodotto"];?>&action=3" role="button">Rimuovi</a>
                 </section>
