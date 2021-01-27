@@ -9,7 +9,7 @@
 -- ********************************************* 
 
 
--- Database Section
+-- Database Sectionzzzzz
 -- ________________ 
 
 create database KIDZ;
