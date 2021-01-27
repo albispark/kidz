@@ -9,9 +9,9 @@ if($_GET['type'] == "wishlist"){
     }
     $dbh->deleteFromWishlist($idprodotto, $_SESSION["IDuser"]);
     if(isset($_GET["where"])){
-       header('Location: ./prodotto.php?id='.$_GET["idprod"]);
+        header('Location: ' . $_SERVER['HTTP_REFERER']);
     } else {
-        header('Location: ./wishlist.php?id='.$_SESSION["IDuser"]);
+        header('Location: ' . $_SERVER['HTTP_REFERER']);
     }
 }
 else if($_GET['type'] == "carrello"){
@@ -19,7 +19,7 @@ else if($_GET['type'] == "carrello"){
         $idprodotto = $_GET["idprod"];
     }
     $dbh->deleteFromCart($idprodotto, $_SESSION["IDuser"]);
-    header('Location: ./carrello.php?id='.$_SESSION["IDuser"]);
+    header('Location: ' . $_SERVER['HTTP_REFERER']);
 }
 
 ?>

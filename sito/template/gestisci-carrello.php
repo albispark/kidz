@@ -53,11 +53,13 @@ $lprod = array();
 
       <!-- Summary -->
       <div class="col-sm-12 my-5 col-md-4">
+      <div class="sticky-top pt-md-3">
         <h3 class="m-0 p-3 border">Dettagli d'ordine</h3>
         <p class="m-0 p-3 border">Totale parziale: <span class="tot"><?php echo $somma?></span>.00€</p>
         <p class="m-0 p-3 border">Spedizione: GRATIS</p>
         <p class="m-0 p-3 border">TOTALE: <span class="tot"><?php echo $somma?></span>.00€</p>
         <a class="btn btn-primary rounded-0 mb-2 btn-block" href="acquisto-completo.php" role="button">Acquista</a>
+      </div>
       </div>
 
     </div>
