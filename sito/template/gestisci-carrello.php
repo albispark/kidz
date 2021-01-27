@@ -67,26 +67,27 @@ $lprod = array();
 
 <script>
 
+
+let somma = <?php echo json_encode($somma) ?>;
+
 function meno(p,idp) {
-    var res = "numero_".concat(idp);
-    var somma = <?php echo json_encode($somma) ?>;
+    const res = "numero_".concat(idp);
     let n = $('#' + res).text();
     if(parseInt(n)-1 >= 1){
         n = parseInt(n)-1;
         $('#' + res).text(n);
-        somma = somma + (n*p);
+        somma = somma - (1*p);
         $(".tot").text(somma);
     }
 }
 
 function aggiungi(p,idp) {
-  var res = "numero_".concat(idp);
-  var somma = <?php echo json_encode($somma) ?>;
+  const res = "numero_".concat(idp);
   let n = $('#' + res).text();
     if(parseInt(n)+1 <= 5){
         n = parseInt(n)+1;
         $('#' + res).text(n);
-        somma = somma + (n*p);
+        somma = somma + (1*p);
         $(".tot").text(somma);
     }
 }
