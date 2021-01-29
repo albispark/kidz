@@ -94,4 +94,4 @@ INSERT INTO `notifica`(`IDnotifica`, `titolo`, `messaggio`, `data`) VALUES
 INSERT INTO `ricezione`(`IDuser`, `IDnotifica`, `visualizzato`) VALUES
 ('1515543','BENVENU', 1),
 ('1515543','000N100', 1),
-('1515543','000N400', 0);
+('8965371','000N400', 1);
